@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@polymer/lit-element": "^0.5.2"
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
+    "@webcomponents/webcomponentsjs": "^2.0.2",
+    "polymer-cli": "^1.7.3"
+  },
+  "scripts": {
+    "start": "npm run serve",
+    "analyze": "polymer analyze > analysis.json",
+    "serve": "polymer serve --hostname 0.0.0.0",
+    "lint": "polymer lint",
+    "test": "polymer test"
+  }
+}
