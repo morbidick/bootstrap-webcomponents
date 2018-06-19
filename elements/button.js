@@ -8,7 +8,7 @@ const variants = colors.reduce((style, {name, color, contrast}) => {
             color: var(--bs-${name}-contrast, ${contrast});
         }
         :host([${name}]:focus:not([disabled])) {
-            box-shadow: 0 0 0 .2rem ${color}50;
+            box-shadow: 0 0 0 .2rem var(--bs-${name}-focusring, ${color}50);
         }
         :host([${name}][outline]) {
             color: var(--bs-${name}-color, ${color});
@@ -22,8 +22,8 @@ const variants = colors.reduce((style, {name, color, contrast}) => {
 }, "");
 
 class BsButton extends LitElement {
-    static get properties() { 
-        return { 
+    static get properties() {
+        return {
             disabled: Boolean,
             active: Boolean,
         }
@@ -50,11 +50,11 @@ class BsButton extends LitElement {
                     border: 1px solid transparent;
                     border-radius: var(--bs-border-radius, .25em);
                     line-height: 1.5;
-                    transition: 
-                        color .15s ease-in-out, 
-                        background-color .15s ease-in-out, 
-                        border-color .15s ease-in-out, 
-                        box-shadow .15s ease-in-out, 
+                    transition:
+                        color .15s ease-in-out,
+                        background-color .15s ease-in-out,
+                        border-color .15s ease-in-out,
+                        box-shadow .15s ease-in-out,
                         filter .15s ease-in-out;
                 }
                 :host(:hover:not([disabled])), :host([active]:not([disabled])) {
@@ -95,11 +95,11 @@ class BsButton extends LitElement {
         }
         this.setAttribute('aria-pressed', isActive);
     }
-  
+
     get active() {
         return this.hasAttribute('active');
     }
-  
+
     set disabled(value) {
         const isDisabled = Boolean(value);
         if (isDisabled) {
@@ -119,7 +119,7 @@ class BsButton extends LitElement {
             this.setAttribute('tabindex', '0');
         }
     }
-  
+
     get disabled() {
         return this.hasAttribute('disabled');
     }
