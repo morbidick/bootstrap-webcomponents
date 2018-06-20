@@ -13,6 +13,7 @@ Slightly opinionated* rewrite of bootstrap elements as web components. See [the 
 
 ### Web components
 
+* [aria best practices](https://www.w3.org/TR/wai-aria-practices-1.1/)
 * [Elix](https://github.com/elix/elix)
 * https://developers.google.com/web/fundamentals/web-components/best-practices
 * https://github.com/GoogleChromeLabs/howto-components
