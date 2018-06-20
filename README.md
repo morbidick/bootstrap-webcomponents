@@ -20,4 +20,4 @@ Slightly opinionated* rewrite of bootstrap elements as web components. See [the 
 #### Styling
 
 * [vaadin themeable mixin](https://github.com/vaadin/vaadin-themable-mixin)
-* [::part and ::theme spec](https://tabatkins.github.io/specs/css-shadow-parts/)
+* [::part and ::theme spec](https://drafts.csswg.org/css-shadow-parts-1/)
