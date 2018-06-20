@@ -1,28 +1,6 @@
 import {LitElement, html} from '@polymer/lit-element';
 import colors from '../styles/colors.js';
 
-const variants = colors.reduce((style, {name, color, contrast}) => {
-    return style + `
-        :host([${name}]:not([outline])) {
-            background-color: var(--bs-${name}-color, ${color});
-            color: var(--bs-${name}-contrast, ${contrast});
-        }
-        :host([${name}]:focus:not([disabled])) {
-            box-shadow: 0 0 0 .2rem var(--bs-${name}-focusring, ${color}50);
-        }
-        :host([${name}][outline]) {
-            color: var(--bs-${name}-color, ${color});
-            border-color: var(--bs-${name}-color, ${color});
-        }
-        :host([${name}][outline]:hover:not([disabled])), :host([${name}][outline][active]) {
-            background-color: var(--bs-${name}-color, ${color});
-            color: var(--bs-${name}-contrast, ${contrast});
-        }
-        :host([${name}][outline]:hover:not([active])) {
-            filter: none;
-        }`
-}, "");
-
 export default class BsButton extends LitElement {
     static get properties() {
         return {
@@ -75,7 +53,28 @@ export default class BsButton extends LitElement {
                 :host([large]) {
                     font-size: 1.25rem;
                 }
-                ${variants}
+                /* color variants */
+                ${colors.reduce((style, {name, color, contrast, focusring}) => {
+                    return style + `
+                        :host([${name}]:not([outline])) {
+                            background-color: ${color};
+                            color: ${contrast};
+                        }
+                        :host([${name}]:focus:not([disabled])) {
+                            box-shadow: 0 0 0 .2rem ${focusring};
+                        }
+                        :host([${name}][outline]) {
+                            color: ${color};
+                            border-color: ${color};
+                        }
+                        :host([${name}][outline]:hover:not([disabled])), :host([${name}][outline][active]) {
+                            background-color: ${color};
+                            color: ${contrast};
+                        }
+                        :host([${name}][outline]:hover:not([active])) {
+                            filter: none;
+                        }`
+                }, "")}
             </style>
             <slot></slot>
         `;
