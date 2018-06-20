@@ -1,96 +1,101 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>Bootstrap Webcomponents</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+	<title>Bootstrap Webcomponents</title>
 
-    <script type="module">
-          import "@polymer/iron-demo-helpers/demo-snippet.js";
-          import "../elements/button.js";
-          import "../elements/button-toggle.js";
-          import "../elements/button-group.js";
+	<script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
-          import fontStyle from "../styles/type.js";
+	<script type="module">
+		import "@polymer/iron-demo-helpers/demo-snippet.js";
+		import "../elements/button.js";
+		import "../elements/button-toggle.js";
+		import "../elements/button-group.js";
 
-          document.head.insertAdjacentHTML("beforeend", fontStyle);
-    </script>
-    <style>
-      .centered {
-        max-width: 60em;
-        margin: 0 auto;
-      }
-    </style>
+		import fontStyle from "../styles/type.js";
 
-  </head>
-  <body>
-    <div class="centered">
-      <h1>Bootstrap Webcomponents</h1>
-      <ul>
-        <li><a href="#buttons">Buttons</a></li>
-      </ul>
-      <h2 id="buttons">Buttons</h2>
-      <demo-snippet>
-        <template>
-          <bs-button>Default</bs-button>
-          <bs-button primary>Primary</bs-button>
-          <bs-button secondary>Secondary</bs-button>
-          <bs-button success>Success</bs-button>
-          <bs-button danger>Danger</bs-button>
-          <bs-button warning>Warning</bs-button>
-          <bs-button info>Info</bs-button>
-          <bs-button light>Light</bs-button>
-          <bs-button dark>Dark</bs-button>
-        </template>
-      </demo-snippet>
+		document.head.insertAdjacentHTML("beforeend", fontStyle);
+	</script>
+	<style>
+		.centered {
+			max-width: 60em;
+			margin: 0 auto;
+		}
+	</style>
 
-      <h3>outline</h3>
-      <demo-snippet>
-        <template>
-          <bs-button outline primary>Primary</bs-button>
-          <bs-button outline secondary>Secondary</bs-button>
-          <bs-button outline success>Success</bs-button>
-          <bs-button outline danger>Danger</bs-button>
-          <bs-button outline warning>Warning</bs-button>
-          <bs-button outline info>Info</bs-button>
-          <bs-button outline light>Light</bs-button>
-          <bs-button outline dark>Dark</bs-button>
-        </template>
-      </demo-snippet>
+</head>
 
-      <h3>sizes</h3>
-      <demo-snippet>
-        <template>
-          <bs-button primary small>small</bs-button>
-          <bs-button primary>regular</bs-button>
-          <bs-button primary large>large</bs-button>
-        </template>
-      </demo-snippet>
+<body>
+	<div class="centered">
+		<h1>Bootstrap Webcomponents</h1>
+		<ul>
+			<li>
+				<a href="#buttons">Buttons</a>
+			</li>
+		</ul>
+		<h2 id="buttons">Buttons</h2>
+		<demo-snippet>
+			<template>
+				<bs-button>Default</bs-button>
+				<bs-button primary>Primary</bs-button>
+				<bs-button secondary>Secondary</bs-button>
+				<bs-button success>Success</bs-button>
+				<bs-button danger>Danger</bs-button>
+				<bs-button warning>Warning</bs-button>
+				<bs-button info>Info</bs-button>
+				<bs-button light>Light</bs-button>
+				<bs-button dark>Dark</bs-button>
+			</template>
+		</demo-snippet>
 
-      <h3>states</h3>
-      <demo-snippet>
-        <template>
-          <bs-button primary disabled>disabled</bs-button>
-          <bs-button secondary active>active</bs-button>
-          <bs-button outline success active>active outline</bs-button>
-          <bs-button-toggle info>toggle button</bs-button-toggle>
-        </template>
-      </demo-snippet>
+		<h3>outline</h3>
+		<demo-snippet>
+			<template>
+				<bs-button outline primary>Primary</bs-button>
+				<bs-button outline secondary>Secondary</bs-button>
+				<bs-button outline success>Success</bs-button>
+				<bs-button outline danger>Danger</bs-button>
+				<bs-button outline warning>Warning</bs-button>
+				<bs-button outline info>Info</bs-button>
+				<bs-button outline light>Light</bs-button>
+				<bs-button outline dark>Dark</bs-button>
+			</template>
+		</demo-snippet>
 
-      <h3>groups</h3>
-      <demo-snippet>
-        <template>
-            <bs-button-group>
-                <bs-button-toggle secondary active>active</bs-button-toggle>
-                <bs-button secondary>button</bs-button>
-                <bs-button secondary>button</bs-button>
-                <bs-button-toggle outline secondary>button</bs-button-toggle>
-            </bs-button-group>
-        </template>
-      </demo-snippet>
-    </div>
-  </body>
+		<h3>sizes</h3>
+		<demo-snippet>
+			<template>
+				<bs-button primary small>small</bs-button>
+				<bs-button primary>regular</bs-button>
+				<bs-button primary large>large</bs-button>
+			</template>
+		</demo-snippet>
+
+		<h3>states</h3>
+		<demo-snippet>
+			<template>
+				<bs-button primary disabled>disabled</bs-button>
+				<bs-button secondary active>active</bs-button>
+				<bs-button outline success active>active outline</bs-button>
+				<bs-button-toggle info>toggle button</bs-button-toggle>
+			</template>
+		</demo-snippet>
+
+		<h3>groups</h3>
+		<demo-snippet>
+			<template>
+				<bs-button-group>
+					<bs-button-toggle secondary active>active</bs-button-toggle>
+					<bs-button secondary>button</bs-button>
+					<bs-button secondary>button</bs-button>
+					<bs-button-toggle outline secondary>button</bs-button-toggle>
+				</bs-button-group>
+			</template>
+		</demo-snippet>
+	</div>
+</body>
+
 </html>
