@@ -11,6 +11,7 @@
     <script type="module">
           import "@polymer/iron-demo-helpers/demo-snippet.js";
           import "../elements/button.js";
+          import "../elements/button-group.js";
 
           import fontStyle from "../styles/type.js";
 
@@ -74,6 +75,17 @@
           <bs-button primary disabled>disabled</bs-button>
           <bs-button secondary active>active</bs-button>
           <bs-button outline success active>active outline</bs-button>
+        </template>
+      </demo-snippet>
+
+      <h3>groups</h3>
+      <demo-snippet>
+        <template>
+            <bs-button-group>
+                <bs-button secondary active>active</bs-button>
+                <bs-button secondary>button</bs-button>
+                <bs-button secondary>button</bs-button>
+            </bs-button-group>
         </template>
       </demo-snippet>
     </div>
