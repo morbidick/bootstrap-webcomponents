@@ -1,17 +1,6 @@
-/*.btn-group, .btn-group-vertical {
-    position: relative;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    vertical-align: middle;
-}
-
-btn-group > .btn-group:not(:last-child) > .btn, .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}*/
 import {LitElement, html} from '@polymer/lit-element';
 
-class BsButtonGroup extends LitElement {
+export default class BsButtonGroup extends LitElement {
     static get properties() {
         return {
             disabled: Boolean,
@@ -26,11 +15,11 @@ class BsButtonGroup extends LitElement {
                     display: inline-flex;
                     vertical-align: middle;
                 }
-                ::slotted(bs-button:not(:last-child)) {
+                ::slotted(bs-button:not(:last-child)), ::slotted(bs-button-toggle:not(:last-child)) {
                     border-top-right-radius: 0;
 	                border-bottom-right-radius: 0;
                 }
-                ::slotted(bs-button:not(:first-child)) {
+                ::slotted(bs-button:not(:first-child)), ::slotted(bs-button-toggle:not(:first-child)) {
                     border-top-left-radius: 0;
 	                border-bottom-left-radius: 0;
                 }

@@ -11,6 +11,7 @@
     <script type="module">
           import "@polymer/iron-demo-helpers/demo-snippet.js";
           import "../elements/button.js";
+          import "../elements/button-toggle.js";
           import "../elements/button-group.js";
 
           import fontStyle from "../styles/type.js";
@@ -75,6 +76,7 @@
           <bs-button primary disabled>disabled</bs-button>
           <bs-button secondary active>active</bs-button>
           <bs-button outline success active>active outline</bs-button>
+          <bs-button-toggle info>toggle button</bs-button-toggle>
         </template>
       </demo-snippet>
 
@@ -82,9 +84,10 @@
       <demo-snippet>
         <template>
             <bs-button-group>
-                <bs-button secondary active>active</bs-button>
+                <bs-button-toggle secondary active>active</bs-button-toggle>
                 <bs-button secondary>button</bs-button>
                 <bs-button secondary>button</bs-button>
+                <bs-button-toggle outline secondary>button</bs-button-toggle>
             </bs-button-group>
         </template>
       </demo-snippet>

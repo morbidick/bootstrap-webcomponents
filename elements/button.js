@@ -17,11 +17,13 @@ const variants = colors.reduce((style, {name, color, contrast}) => {
         :host([${name}][outline]:hover:not([disabled])), :host([${name}][outline][active]) {
             background-color: var(--bs-${name}-color, ${color});
             color: var(--bs-${name}-contrast, ${contrast});
+        }
+        :host([${name}][outline]:hover:not([active])) {
             filter: none;
         }`
 }, "");
 
-class BsButton extends LitElement {
+export default class BsButton extends LitElement {
     static get properties() {
         return {
             disabled: Boolean,
@@ -42,6 +44,7 @@ class BsButton extends LitElement {
                     outline: none;
                 }
                 :host {
+                    user-select: none;
                     font-size: 1rem;
                     padding: .375em .75em;
                     text-align: center;
@@ -57,8 +60,11 @@ class BsButton extends LitElement {
                         box-shadow .15s ease-in-out,
                         filter .15s ease-in-out;
                 }
-                :host(:hover:not([disabled])), :host([active]:not([disabled])) {
+                :host(:hover:not([disabled])) {
                     filter: brightness(0.85);
+                }
+                :host([active]:not([disabled])) {
+                    filter: brightness(0.75);
                 }
                 :host([disabled]) {
                     opacity: 0.65;
