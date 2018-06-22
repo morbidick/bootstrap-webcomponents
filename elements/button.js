@@ -78,7 +78,6 @@ export function buttonStyle(host = (selector) => selector ? `:host(${selector})`
 </style>`
 }
 
-console.log(buttonStyle())
 export default class BsButton extends LitElement {
 	static get properties() {
 		return {

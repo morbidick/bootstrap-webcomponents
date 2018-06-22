@@ -15,6 +15,7 @@
 		import "../elements/button-toggle.js";
 		import "../elements/button-link.js";
 		import "../elements/button-group.js";
+		import "../elements/badge.js";
 
 		import fontStyle from "../styles/type.js";
 
@@ -35,6 +36,7 @@
 		<ul>
 			<li>
 				<a href="#buttons">Buttons</a>
+				<a href="#badges">Badges</a>
 			</li>
 		</ul>
 		<h2 id="buttons">Buttons</h2>
@@ -105,6 +107,34 @@
 					<bs-button-link href="#where">Group</bs-button-link>
 					<bs-button-link href="#to">Group</bs-button-link>
 				</bs-button-group>
+			</template>
+		</demo-snippet>
+
+		<h2 id="badges">Badges</h2>
+		<demo-snippet>
+			<template>
+				<bs-badge theme="primary">Primary</bs-badge>
+				<bs-badge theme="secondary">Secondary</bs-badge>
+				<bs-badge theme="success">Success</bs-badge>
+				<bs-badge theme="danger">Danger</bs-badge>
+				<bs-badge theme="warning">Warning</bs-badge>
+				<bs-badge theme="info">Info</bs-badge>
+				<bs-badge theme="light">Light</bs-badge>
+				<bs-badge theme="dark">Dark</bs-badge>
+			</template>
+		</demo-snippet>
+
+		<h3>pill <bs-badge theme="pill info">round</bs-badge></h3>
+		<demo-snippet>
+			<template>
+				<bs-badge theme="pill primary">Primary</bs-badge>
+				<bs-badge theme="pill secondary">Secondary</bs-badge>
+				<bs-badge theme="pill success">Success</bs-badge>
+				<bs-badge theme="pill danger">Danger</bs-badge>
+				<bs-badge theme="pill warning">Warning</bs-badge>
+				<bs-badge theme="pill info">Info</bs-badge>
+				<bs-badge theme="pill light">Light</bs-badge>
+				<bs-badge theme="pill dark">Dark</bs-badge>
 			</template>
 		</demo-snippet>
 	</div>
