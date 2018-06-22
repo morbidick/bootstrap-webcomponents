@@ -1,8 +1,11 @@
 # Bootstrap Web Components
 
-Slightly opinionated* rewrite of bootstrap elements as web components. See [the demo](demo/index.html) for all implemented elements.
+> ## 🛠 Status: In Development
+> Currently this is a proof of concept, components get implemented as needed. PRs welcome!
 
-*as in, no pixel exact, color perfect, copy leaving out certain edge-cases
+Slightly opinionated* rewrite of bootstrap components as web components. See [the demo](demo/index.html) for all implemented features.
+
+*as in no pixel exact, color perfect copy leaving out certain edge-cases.
 
 ## Resources
 
