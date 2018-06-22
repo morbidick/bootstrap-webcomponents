@@ -17,15 +17,17 @@ export default class BsButtonGroup extends LitElement {
 				}
 
 				::slotted(bs-button:not(:last-child)),
+				::slotted(bs-button-link:not(:last-child)),
 				::slotted(bs-button-toggle:not(:last-child)) {
-					border-top-right-radius: 0;
-					border-bottom-right-radius: 0;
+					--bs-border-top-right-radius: 0;
+					--bs-border-bottom-right-radius: 0;
 				}
 
 				::slotted(bs-button:not(:first-child)),
+				::slotted(bs-button-link:not(:first-child)),
 				::slotted(bs-button-toggle:not(:first-child)) {
-					border-top-left-radius: 0;
-					border-bottom-left-radius: 0;
+					--bs-border-top-left-radius: 0;
+					--bs-border-bottom-left-radius: 0;
 				}
 			</style>
 			<slot></slot>

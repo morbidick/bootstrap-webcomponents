@@ -13,6 +13,7 @@
 		import "@polymer/iron-demo-helpers/demo-snippet.js";
 		import "../elements/button.js";
 		import "../elements/button-toggle.js";
+		import "../elements/button-link.js";
 		import "../elements/button-group.js";
 
 		import fontStyle from "../styles/type.js";
@@ -39,48 +40,47 @@
 		<h2 id="buttons">Buttons</h2>
 		<demo-snippet>
 			<template>
-				<bs-button>Default</bs-button>
-				<bs-button primary>Primary</bs-button>
-				<bs-button secondary>Secondary</bs-button>
-				<bs-button success>Success</bs-button>
-				<bs-button danger>Danger</bs-button>
-				<bs-button warning>Warning</bs-button>
-				<bs-button info>Info</bs-button>
-				<bs-button light>Light</bs-button>
-				<bs-button dark>Dark</bs-button>
+				<bs-button theme="primary">Primary</bs-button>
+				<bs-button theme="secondary">Secondary</bs-button>
+				<bs-button theme="success">Success</bs-button>
+				<bs-button theme="danger">Danger</bs-button>
+				<bs-button theme="warning">Warning</bs-button>
+				<bs-button theme="info">Info</bs-button>
+				<bs-button theme="light">Light</bs-button>
+				<bs-button theme="dark">Dark</bs-button>
 			</template>
 		</demo-snippet>
 
 		<h3>outline</h3>
 		<demo-snippet>
 			<template>
-				<bs-button outline primary>Primary</bs-button>
-				<bs-button outline secondary>Secondary</bs-button>
-				<bs-button outline success>Success</bs-button>
-				<bs-button outline danger>Danger</bs-button>
-				<bs-button outline warning>Warning</bs-button>
-				<bs-button outline info>Info</bs-button>
-				<bs-button outline light>Light</bs-button>
-				<bs-button outline dark>Dark</bs-button>
+				<bs-button theme="outline primary">Primary</bs-button>
+				<bs-button theme="outline secondary">Secondary</bs-button>
+				<bs-button theme="outline success">Success</bs-button>
+				<bs-button theme="outline danger">Danger</bs-button>
+				<bs-button theme="outline warning">Warning</bs-button>
+				<bs-button theme="outline info">Info</bs-button>
+				<bs-button theme="outline light">Light</bs-button>
+				<bs-button theme="outline dark">Dark</bs-button>
 			</template>
 		</demo-snippet>
 
 		<h3>sizes</h3>
 		<demo-snippet>
 			<template>
-				<bs-button primary small>small</bs-button>
-				<bs-button primary>regular</bs-button>
-				<bs-button primary large>large</bs-button>
+				<bs-button theme="primary small">small</bs-button>
+				<bs-button theme="primary">regular</bs-button>
+				<bs-button theme="primary large">large</bs-button>
 			</template>
 		</demo-snippet>
 
 		<h3>states</h3>
 		<demo-snippet>
 			<template>
-				<bs-button primary disabled>disabled</bs-button>
-				<bs-button secondary active>active</bs-button>
-				<bs-button outline success active>active outline</bs-button>
-				<bs-button-toggle info>toggle button</bs-button-toggle>
+				<bs-button theme="primary" disabled>disabled</bs-button>
+				<bs-button theme="secondary" active>active</bs-button>
+				<bs-button theme="outline success" active>active outline</bs-button>
+				<bs-button-toggle theme="info">toggle button</bs-button-toggle>
 			</template>
 		</demo-snippet>
 
@@ -88,10 +88,22 @@
 		<demo-snippet>
 			<template>
 				<bs-button-group>
-					<bs-button-toggle secondary active>active</bs-button-toggle>
-					<bs-button secondary>button</bs-button>
-					<bs-button secondary>button</bs-button>
-					<bs-button-toggle outline secondary>button</bs-button-toggle>
+					<bs-button-toggle theme="secondary" active>active</bs-button-toggle>
+					<bs-button theme="secondary">button</bs-button>
+					<bs-button theme="secondary">button</bs-button>
+					<bs-button-toggle theme="outline secondary">button</bs-button-toggle>
+				</bs-button-group>
+			</template>
+		</demo-snippet>
+
+		<h3>links</h3>
+		<demo-snippet>
+			<template>
+				<bs-button-link href="#foo">Default</bs-button-link>
+				<bs-button-link href="#bar" theme="info outline">Info</bs-button-link>
+				<bs-button-group>
+					<bs-button-link href="#where">Group</bs-button-link>
+					<bs-button-link href="#to">Group</bs-button-link>
 				</bs-button-group>
 			</template>
 		</demo-snippet>
