@@ -30,6 +30,8 @@ export default class BsBadge extends LitElement {
 					border-bottom-left-radius: var(--bs-border-bottom-left-radius, .25em);
 					border-bottom-right-radius: var(--bs-border-bottom-right-radius, .25em);
 
+					transition: filter .15s ease-in-out;
+
 					font-size: .75em;
 					font-weight: 700;
 					line-height: 1;
@@ -38,7 +40,7 @@ export default class BsBadge extends LitElement {
 					vertical-align: baseline;
 					text-decoration: none;
 				}
-				a:hover {
+				a:hover, a:focus {
 					filter: brightness(0.85);
 				}
 				${colors.reduce((style, {selector, color, contrast, focusring}) => {

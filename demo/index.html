@@ -12,8 +12,6 @@
 	<script type="module">
 		import "@polymer/iron-demo-helpers/demo-snippet.js";
 		import "../elements/button.js";
-		import "../elements/button-toggle.js";
-		import "../elements/button-link.js";
 		import "../elements/button-group.js";
 		import "../elements/badge.js";
 
@@ -34,10 +32,8 @@
 	<div class="centered">
 		<h1>Bootstrap Webcomponents</h1>
 		<ul>
-			<li>
-				<a href="#buttons">Buttons</a>
-				<a href="#badges">Badges</a>
-			</li>
+			<li><a href="#buttons">Buttons</a></li>
+			<li><a href="#badges">Badges</a></li>
 		</ul>
 		<h2 id="buttons">Buttons</h2>
 		<demo-snippet>
@@ -82,7 +78,7 @@
 				<bs-button theme="primary" disabled>disabled</bs-button>
 				<bs-button theme="secondary" active>active</bs-button>
 				<bs-button theme="outline success" active>active outline</bs-button>
-				<bs-button-toggle theme="info">toggle button</bs-button-toggle>
+				<bs-button toggle theme="info">toggle button</bs-button>
 			</template>
 		</demo-snippet>
 
@@ -90,10 +86,10 @@
 		<demo-snippet>
 			<template>
 				<bs-button-group>
-					<bs-button-toggle theme="secondary" active>active</bs-button-toggle>
+					<bs-button toggle active theme="secondary">active</bs-button>
 					<bs-button theme="secondary">button</bs-button>
 					<bs-button theme="secondary">button</bs-button>
-					<bs-button-toggle theme="outline secondary">button</bs-button-toggle>
+					<bs-button toggle theme="outline secondary">button</bs-button>
 				</bs-button-group>
 			</template>
 		</demo-snippet>
@@ -101,11 +97,11 @@
 		<h3>links</h3>
 		<demo-snippet>
 			<template>
-				<bs-button-link href="#foo">Default</bs-button-link>
-				<bs-button-link href="#bar" theme="info outline">Info</bs-button-link>
+				<bs-button href="#foo">Default</bs-button>
+				<bs-button href="#bar" theme="info outline">Info</bs-button>
 				<bs-button-group>
-					<bs-button-link href="#where">Group</bs-button-link>
-					<bs-button-link href="#to">Group</bs-button-link>
+					<bs-button href="#where">Group</bs-button>
+					<bs-button href="#to">Group</bs-button>
 				</bs-button-group>
 			</template>
 		</demo-snippet>

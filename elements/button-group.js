@@ -16,16 +16,12 @@ export default class BsButtonGroup extends LitElement {
 					vertical-align: middle;
 				}
 
-				::slotted(bs-button:not(:last-child)),
-				::slotted(bs-button-link:not(:last-child)),
-				::slotted(bs-button-toggle:not(:last-child)) {
+				::slotted(bs-button:not(:last-child)) {
 					--bs-border-top-right-radius: 0;
 					--bs-border-bottom-right-radius: 0;
 				}
 
-				::slotted(bs-button:not(:first-child)),
-				::slotted(bs-button-link:not(:first-child)),
-				::slotted(bs-button-toggle:not(:first-child)) {
+				::slotted(bs-button:not(:first-child)) {
 					--bs-border-top-left-radius: 0;
 					--bs-border-bottom-left-radius: 0;
 				}
