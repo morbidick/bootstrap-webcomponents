@@ -60,14 +60,6 @@ export default class BsBadge extends LitElement {
 			${href ? html`<a href$=${href}><slot></slot></a>`: html`<span><slot></slot></span>`}
 		`;
 	}
-
-	set theme(value) {
-		this.setAttribute('theme', value);
-	}
-	get theme() {
-		return this.hasAttribute('theme');
-	}
-
 }
 
 customElements.define('bs-badge', BsBadge);
