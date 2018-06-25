@@ -7,7 +7,6 @@ export default class BsButton extends LitElement {
 			active: Boolean,
 			disabled: Boolean,
 			href: String,
-			theme: String,
 			toggle: Boolean,
 		}
 	}
@@ -16,7 +15,13 @@ export default class BsButton extends LitElement {
 		super();
 		this.active = false;
 		this.disabled = false;
-		this.theme = "secondary";
+	}
+
+	connectedCallback() {
+		super.connectedCallback();
+		if (!this.hasAttribute('class')) {
+			this.setAttribute('class', 'secondary');
+		}
 	}
 
 	_render({active, disabled, href, toggle}) {
@@ -66,31 +71,31 @@ export default class BsButton extends LitElement {
 				:host > [disabled] {
 					opacity: 0.65;
 				}
-				:host([theme~="small"]) > * {
+				:host(.small) > * {
 					font-size: .875rem;
 				}
-				:host([theme~="large"]) > * {
+				:host(.large) > * {
 					font-size: 1.25rem;
 				}
 				/* color variants */
 				${colors.reduce((style, {selector, color, contrast, focusring}) => {
 					return style + `
-						:host(${selector}:not([theme~="outline"])) > * {
+						:host(${selector}:not(.outline)) > * {
 							background-color: ${color};
 							color: ${contrast};
 						}
 						:host(${selector}) > *:focus:not([disabled]) {
 							box-shadow: 0 0 0 .2rem ${focusring};
 						}
-						:host(${selector}[theme~="outline"]) > * {
+						:host(${selector}.outline) > * {
 							color: ${color};
 							border-color: ${color};
 						}
-						:host(${selector}[theme~="outline"]) > *:hover:not([disabled]), :host(${selector}[theme~="outline"]) > [active] {
+						:host(${selector}.outline) > *:hover:not([disabled]), :host(${selector}.outline) > [active] {
 							background-color: ${color};
 							color: ${contrast};
 						}
-						:host(${selector}[theme~="outline"]) > *:hover:not([active]) {
+						:host(${selector}.outline) > *:hover:not([active]) {
 							filter: none;
 						}`
 				}, "")}
