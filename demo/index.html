@@ -14,6 +14,7 @@
 		import "../elements/button.js";
 		import "../elements/button-group.js";
 		import "../elements/badge.js";
+		import "../elements/alert.js";
 
 		import fontStyle from "../styles/type.js";
 
@@ -34,6 +35,7 @@
 		<ul>
 			<li><a href="#buttons">Buttons</a></li>
 			<li><a href="#badges">Badges</a></li>
+			<li><a href="#alerts">Alerts</a></li>
 		</ul>
 		<h2 id="buttons">Buttons</h2>
 		<demo-snippet>
@@ -140,6 +142,41 @@
 			<template>
 				<bs-badge class="secondary" href="#foo">Secondary</bs-badge>
 				<bs-badge class="success" href="#bar">Success</bs-badge>
+			</template>
+		</demo-snippet>
+
+		<h2 id="alerts">Alerts</h2>
+		<demo-snippet>
+			<template>
+				<bs-alert class="primary">This is a primary alert with <a href="#">an example link</a>.</bs-alert>
+				<bs-alert class="secondary">This is a secondary alert with <a href="#">an example link</a>.</bs-alert>
+				<bs-alert class="success">This is a success alert with <a href="#">an example link</a>.</bs-alert>
+				<bs-alert class="danger">This is a danger alert with <a href="#">an example link</a>.</bs-alert>
+				<bs-alert class="warning">This is a warning alert with <a href="#">an example link</a>.</bs-alert>
+				<bs-alert class="info">This is a info alert with <a href="#">an example link</a>.</bs-alert>
+				<bs-alert class="light">This is a light alert with <a href="#">an example link</a>.</bs-alert>
+				<bs-alert class="dark">This is a dark alert with <a href="#">an example link</a>.</bs-alert>
+			</template>
+		</demo-snippet>
+
+		<h3>rich content</h3>
+		<demo-snippet>
+			<template>
+				<bs-alert class="info">
+					<h4 >Well done!</h4>
+					<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+					<hr>
+					<p>Whenever you need to, be sure to use margins to keep things nice and tidy.</p>
+				</bs-alert>
+			</template>
+		</demo-snippet>
+
+		<h3>dismissable</h3>
+		<demo-snippet>
+			<template>
+				<bs-alert dismissable class="primary">This is a primary dismissable alert.</bs-alert>
+				<bs-alert dismissable class="secondary">This is a secondary dismissable alert.</bs-alert>
+				<bs-alert dismissable class="success">This is a success dismissable alert. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content</bs-alert>
 			</template>
 		</demo-snippet>
 	</div>
