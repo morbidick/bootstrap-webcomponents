@@ -4,10 +4,16 @@ import colors from '../styles/colors.js';
 export default class BsButton extends LitElement {
 	static get properties() {
 		return {
+			// set button state to active
 			active: Boolean,
+			// disable the button
 			disabled: Boolean,
+			// set to an url to get an anchor element with button styling
 			href: String,
+			// set to true to act as a toggle button
 			toggle: Boolean,
+			// the button type (default: button)
+			type: String,
 		}
 	}
 
@@ -15,6 +21,7 @@ export default class BsButton extends LitElement {
 		super();
 		this.active = false;
 		this.disabled = false;
+		this.type = "button";
 	}
 
 	connectedCallback() {
@@ -24,7 +31,7 @@ export default class BsButton extends LitElement {
 		}
 	}
 
-	_render({active, disabled, href, toggle}) {
+	_render({active, disabled, href, toggle, type}) {
 		return html`
 			<style>
 				:host(:not([hidden])) {
@@ -62,11 +69,8 @@ export default class BsButton extends LitElement {
 						box-shadow .15s ease-in-out,
 						filter .15s ease-in-out;
 				}
-				:host > *:hover:not([disabled]) {
-					filter: brightness(0.85);
-				}
 				:host > [active]:not([disabled]) {
-					filter: brightness(0.75);
+					filter: brightness(0.85);
 				}
 				:host > [disabled] {
 					opacity: 0.65;
@@ -78,11 +82,14 @@ export default class BsButton extends LitElement {
 					font-size: 1.25rem;
 				}
 				/* color variants */
-				${colors.reduce((style, {selector, color, contrast, focusring}) => {
+				${colors.reduce((style, {selector, color, contrast, focusring, hoverbg}) => {
 					return style + `
 						:host(${selector}:not(.outline)) > * {
 							background-color: ${color};
 							color: ${contrast};
+						}
+						:host(${selector}:not(.outline)) > *:hover {
+							background-color: ${hoverbg};
 						}
 						:host(${selector}) > *:focus:not([disabled]) {
 							box-shadow: 0 0 0 .2rem ${focusring};
@@ -100,9 +107,11 @@ export default class BsButton extends LitElement {
 						}`
 				}, "")}
 			</style>
-			${href ? html`<a href$=${href} disabled?=${disabled} active?=${active}><slot></slot></a>`:
-			  !toggle ? html`<button disabled?=${disabled} active?=${active}><slot></slot></button>`:
+			${href ? html`<a id="button" href$=${href} disabled?=${disabled} active?=${active}><slot></slot></a>`:
+			  !toggle ? html`<button id="button" type$=${type} disabled?=${disabled} active?=${active}><slot></slot></button>`:
 			  html`<button
+				id="button"
+				type="button"
 				disabled?=${disabled}
 				active?=${active}
 				aria-pressed$=${active}
@@ -127,16 +136,23 @@ export default class BsButton extends LitElement {
 		`;
 	}
 
+	/**
+	 * Toggle the button state
+	 */
 	_toggle() {
 		if (this.disabled)
 			return;
 		this.active = !this.active;
 	}
 
+	/**
+	 * Fire change notification event
+	 */
 	_propertiesChanged(props, changedProps, oldProps) {
 		super._propertiesChanged(props, changedProps, oldProps);
 
 		if('active' in changedProps) {
+			// dont fire on initial set
 			if (oldProps['active'] !== undefined) {
 				this.dispatchEvent(new CustomEvent('active-changed', {
 					detail: {
@@ -149,11 +165,25 @@ export default class BsButton extends LitElement {
 		}
 	};
 
-	set theme(value) {
-		this.setAttribute('theme', value);
+	/**
+	 * Pass external clicks to the internal button
+	 */
+	click() {
+		this.$button.click();
 	}
-	get theme() {
-		return this.getAttribute('theme');
+
+	/**
+	 * Pass external focuses to the internal button
+	 */
+	focus() {
+		this.$button.focus();
+	}
+
+	/**
+	 * Expose internal button
+	 */
+	get $button() {
+		return this._root.querySelector('#button');
 	}
 }
 

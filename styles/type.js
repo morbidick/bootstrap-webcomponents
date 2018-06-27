@@ -5,10 +5,12 @@ export const fontFamilySansSerif = '-apple-system, BlinkMacSystemFont, "Segoe UI
 export const fontFamilyMonospace = 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
 export const fontStyle = `<style>
 	:root {
-		font-family: ${fontFamilySansSerif};
+		font-family: var(--bs-body-font-family, ${fontFamilySansSerif});
+		line-height: 1.5;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
+		margin-top: 1.5em;
 		margin-bottom: 0.5em;
 		font-weight: 500;
 		line-height: 1.2;
@@ -20,15 +22,29 @@ export const fontStyle = `<style>
 	h4 { font-size: 1.5rem; }
 	h5 { font-size: 1.25rem; }
 	h6 { font-size: 1rem; }
+
+	p {
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
 </style>`;
 export const linkStyle = `<style>
 	a {
-		color: ${primary.color};
+		color: var(--bs-link-color, ${primary.color});
 		text-decoration: none;
 	}
 	a:hover, a:focus {
 		text-decoration: underline;
 	}
 </style>`
+export const hrStyle = `<style>
+	hr {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		border: 0;
+		border-top: 1px solid currentColor;
+		opacity: 0.1;
+	}
+</style>`
 
-export default fontStyle + linkStyle;
+export default fontStyle + linkStyle + hrStyle;

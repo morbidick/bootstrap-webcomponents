@@ -41,14 +41,14 @@ export default class BsBadge extends LitElement {
 					vertical-align: baseline;
 					text-decoration: none;
 				}
-				a:hover, a:focus {
-					filter: brightness(0.85);
-				}
-				${colors.reduce((style, {selector, color, contrast, focusring}) => {
+				${colors.reduce((style, {selector, color, contrast, hoverbg}) => {
 					return style + `
 						:host(${selector}) > * {
 							background-color: ${color};
 							color: ${contrast};
+						}
+						:host(${selector}) > a:hover, :host(${selector}) > a:focus {
+							background-color: ${hoverbg};
 						}`
 				}, "")}
 				:host(.pill) > * {
