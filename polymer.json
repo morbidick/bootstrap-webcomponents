@@ -1,4 +1,8 @@
 {
+  "entrypoint": "demo/index.html",
+  "extraDependencies": [
+    "node_modules/@webcomponents/webcomponentsjs/bundles/*.js"
+  ],
   "npm": true,
   "moduleResolution": "node",
   "lint": {

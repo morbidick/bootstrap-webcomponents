@@ -11,6 +11,7 @@
     "start": "npm run serve",
     "analyze": "polymer analyze > analysis.json",
     "serve": "polymer serve --hostname 0.0.0.0",
+    "build": "polymer build",
     "lint": "polymer lint",
     "test": "polymer test"
   }
