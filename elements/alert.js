@@ -36,8 +36,8 @@ export default class BsAlert extends LitElement {
 				:host([dismissable]) {
 					padding-right: 4em;
 				}
-				:host([dismissable]) button {
-					display: hidden;
+				:host(:not([dismissable])) button {
+					display: none;
 				}
 				button {
 					position: absolute;
