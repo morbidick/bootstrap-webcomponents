@@ -27,7 +27,7 @@ export default class BsBadge extends LitElement {
 				a, span {
 					padding: .25em .4em;
 					border-top-left-radius: var(--bs-border-top-left-radius, .25em);
-					border-top-right-radius:	var(--bs-border-top-right-radius, .25em);
+					border-top-right-radius: var(--bs-border-top-right-radius, .25em);
 					border-bottom-left-radius: var(--bs-border-bottom-left-radius, .25em);
 					border-bottom-right-radius: var(--bs-border-bottom-right-radius, .25em);
 
@@ -41,6 +41,9 @@ export default class BsBadge extends LitElement {
 					vertical-align: baseline;
 					text-decoration: none;
 				}
+				a:hover, a:active {
+					text-decoration: none;
+				}
 				${colors.reduce((style, {selector, color, contrast, hoverbg}) => {
 					return style + `
 						:host(${selector}) > * {
@@ -49,7 +52,7 @@ export default class BsBadge extends LitElement {
 						}
 						:host(${selector}) > a:hover, :host(${selector}) > a:focus {
 							background-color: ${hoverbg};
-						}`
+						}`;
 				}, "")}
 				:host(.pill) > * {
 					padding-right: .6em;

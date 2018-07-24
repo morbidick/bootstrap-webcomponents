@@ -69,6 +69,10 @@ export default class BsButton extends LitElement {
 						box-shadow .15s ease-in-out,
 						filter .15s ease-in-out;
 				}
+				/* reset firefox button focus style */
+				button::-moz-focus-inner {
+					border: 0;
+				}
 				:host > [active]:not([disabled]) {
 					filter: brightness(0.85);
 				}
@@ -183,7 +187,7 @@ export default class BsButton extends LitElement {
 	 * Expose internal button
 	 */
 	get $button() {
-		return this._root.querySelector('#button');
+		return this.shadowRoot.querySelector('#button');
 	}
 }
 
