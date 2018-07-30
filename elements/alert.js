@@ -103,6 +103,7 @@ export default class BsAlert extends LitElement {
 
 	set dismissable(value) {
 		const isDismissable = Boolean(value);
+		this._setProperty('dismissable', isDismissable);
 		if (isDismissable) {
 			this.setAttribute('dismissable', '');
 		} else {
