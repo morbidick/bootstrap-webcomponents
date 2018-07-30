@@ -32,6 +32,10 @@ export default class BsAlert extends LitElement {
 					margin-bottom: 1rem;
 					border: 1px solid transparent;
 					border-radius: .25rem;
+
+					background-color: var(--bs-alert-background-color);
+					color: var(--bs-alert-color);
+					border-color: var(--bs-alert-border-color);
 				}
 				:host([dismissable]) {
 					padding-right: 4em;
@@ -73,9 +77,9 @@ export default class BsAlert extends LitElement {
 				${colors.reduce((style, {selector, alertcolor, alertbg, alertborder}) => {
 					return style + `
 						:host(${selector}) {
-							background-color: ${alertbg};
-							color: ${alertcolor};
-							border-color: ${alertborder};
+							--bs-alert-background-color: ${alertbg};
+							--bs-alert-color: ${alertcolor};
+							--bs-alert-border-color: ${alertborder};
 							--bs-link-color: ${alertcolor};
 						}`
 				}, "")}

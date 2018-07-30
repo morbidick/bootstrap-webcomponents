@@ -85,29 +85,35 @@ export default class BsButton extends LitElement {
 				:host(.large) > * {
 					font-size: 1.25rem;
 				}
+				*:focus:not([disabled]) {
+					box-shadow: 0 0 0 .2rem var(--bs-button-focusring-color);
+				}
+				:host(:not(.outline)) > * {
+					background-color: var(--bs-button-background-color);
+					color: var(--bs-button-color);
+				}
+				:host(:not(.outline)) > *:hover:not([disabled]) {
+					background-color: var(--bs-button-hover-background-color);
+				}
+				:host(.outline) > * {
+					color: var(--bs-button-background-color);
+					border-color: var(--bs-button-background-color);
+				}
+				:host(.outline) > *:hover:not([disabled]), :host(.outline) > [active] {
+					background-color: var(--bs-button-background-color);
+					color: var(--bs-button-color);
+				}
+				:host(.outline) > *:hover:not([active]) {
+					filter: none;
+				}
 				/* color variants */
 				${colors.reduce((style, {selector, color, contrast, focusring, hoverbg}) => {
 					return style + `
-						:host(${selector}:not(.outline)) > * {
-							background-color: ${color};
-							color: ${contrast};
-						}
-						:host(${selector}:not(.outline)) > *:hover {
-							background-color: ${hoverbg};
-						}
-						:host(${selector}) > *:focus:not([disabled]) {
-							box-shadow: 0 0 0 .2rem ${focusring};
-						}
-						:host(${selector}.outline) > * {
-							color: ${color};
-							border-color: ${color};
-						}
-						:host(${selector}.outline) > *:hover:not([disabled]), :host(${selector}.outline) > [active] {
-							background-color: ${color};
-							color: ${contrast};
-						}
-						:host(${selector}.outline) > *:hover:not([active]) {
-							filter: none;
+						:host(${selector}) {
+							--bs-button-background-color: ${color};
+							--bs-button-color: ${contrast};
+							--bs-button-focusring-color: ${focusring};
+							--bs-button-hover-background-color: ${hoverbg};
 						}`
 				}, "")}
 			</style>

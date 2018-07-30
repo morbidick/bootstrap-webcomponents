@@ -32,6 +32,8 @@ export default class BsBadge extends LitElement {
 					border-bottom-right-radius: var(--bs-border-bottom-right-radius, .25em);
 
 					transition: filter .15s ease-in-out;
+					color: var(--bs-badge-color);
+					background-color: var(--bs-badge-background-color);
 
 					font-size: .75em;
 					font-weight: 700;
@@ -41,17 +43,16 @@ export default class BsBadge extends LitElement {
 					vertical-align: baseline;
 					text-decoration: none;
 				}
-				a:hover, a:active {
+				a:hover, a:active, a:focus {
 					text-decoration: none;
+					background-color: var(--bs-badge-hover-background-color)
 				}
 				${colors.reduce((style, {selector, color, contrast, hoverbg}) => {
 					return style + `
-						:host(${selector}) > * {
-							background-color: ${color};
-							color: ${contrast};
-						}
-						:host(${selector}) > a:hover, :host(${selector}) > a:focus {
-							background-color: ${hoverbg};
+						:host(${selector}) {
+							--bs-badge-background-color: ${color};
+							--bs-badge-color: ${contrast};
+							--bs-badge-hover-background-color: ${hoverbg};
 						}`;
 				}, "")}
 				:host(.pill) > * {
