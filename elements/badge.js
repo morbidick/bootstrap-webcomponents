@@ -47,14 +47,13 @@ export default class BsBadge extends LitElement {
 					text-decoration: none;
 					background-color: var(--bs-badge-hover-background-color)
 				}
-				${colors.reduce((style, {selector, color, contrast, hoverbg}) => {
-					return style + `
-						:host(${selector}) {
-							--bs-badge-background-color: ${color};
-							--bs-badge-color: ${contrast};
-							--bs-badge-hover-background-color: ${hoverbg};
-						}`;
-				}, "")}
+				${colors.map(({selector, color, contrast, hoverbg}) => html`
+					:host(${selector}) {
+						--bs-badge-background-color: ${color};
+						--bs-badge-color: ${contrast};
+						--bs-badge-hover-background-color: ${hoverbg};
+					}`
+				)}
 				:host(.pill) > * {
 					padding-right: .6em;
 					padding-left: .6em;

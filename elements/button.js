@@ -107,15 +107,14 @@ export default class BsButton extends LitElement {
 					filter: none;
 				}
 				/* color variants */
-				${colors.reduce((style, {selector, color, contrast, focusring, hoverbg}) => {
-					return style + `
-						:host(${selector}) {
-							--bs-button-background-color: ${color};
-							--bs-button-color: ${contrast};
-							--bs-button-focusring-color: ${focusring};
-							--bs-button-hover-background-color: ${hoverbg};
-						}`
-				}, "")}
+				${colors.map(({selector, color, contrast, focusring, hoverbg}) => html`
+					:host(${selector}) {
+						--bs-button-background-color: ${color};
+						--bs-button-color: ${contrast};
+						--bs-button-focusring-color: ${focusring};
+						--bs-button-hover-background-color: ${hoverbg};
+					}`
+				)}
 			</style>
 			${href ? html`<a id="button" href$=${href} disabled?=${disabled} active?=${active}><slot></slot></a>`:
 			  !toggle ? html`<button id="button" type$=${type} disabled?=${disabled} active?=${active}><slot></slot></button>`:

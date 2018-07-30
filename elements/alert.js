@@ -74,15 +74,14 @@ export default class BsAlert extends LitElement {
 				::slotted(:last-child) {
 					margin-bottom: 0 !important;
 				}
-				${colors.reduce((style, {selector, alertcolor, alertbg, alertborder}) => {
-					return style + `
-						:host(${selector}) {
-							--bs-alert-background-color: ${alertbg};
-							--bs-alert-color: ${alertcolor};
-							--bs-alert-border-color: ${alertborder};
-							--bs-link-color: ${alertcolor};
-						}`
-				}, "")}
+				${colors.map(({selector, alertcolor, alertbg, alertborder}) => html`
+					:host(${selector}) {
+						--bs-alert-background-color: ${alertbg};
+						--bs-alert-color: ${alertcolor};
+						--bs-alert-border-color: ${alertborder};
+						--bs-link-color: ${alertcolor};
+					}`
+				)}
 			</style>
 			<slot></slot>
 			<button
