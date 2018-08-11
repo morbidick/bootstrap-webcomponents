@@ -25,7 +25,12 @@ jobs:
       - run: npm test
 
       - store_artifacts:
+          path: test-results.xml
+          prefix: tests
+
+      - store_artifacts:
           path: tests/visual/screenshots
+          prefix: screenshots
 
       - store_test_results:
           path: test-results.xml
