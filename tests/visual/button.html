@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+	<script type="module">
+		import "../../elements/button.js";
+		import fontStyle from "../../styles/type.js";
+
+		document.head.insertAdjacentHTML("beforeend", fontStyle);
+	</script>
+	<style>
+		body {
+			margin: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<bs-button class="primary">Primary</bs-button>
+	<bs-button class="secondary">Secondary</bs-button>
+	<bs-button class="success">Success</bs-button>
+	<bs-button class="danger">Danger</bs-button>
+	<bs-button class="warning">Warning</bs-button>
+	<bs-button class="info">Info</bs-button>
+	<bs-button class="light">Light</bs-button>
+	<bs-button class="dark">Dark</bs-button>
+</body>
+
+</html>

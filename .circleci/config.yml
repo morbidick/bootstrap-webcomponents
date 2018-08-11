@@ -25,4 +25,4 @@ jobs:
       - run: npm test
 
       - store_artifacts:
-          path: visual/screenshots
+          path: tests/visual/screenshots
