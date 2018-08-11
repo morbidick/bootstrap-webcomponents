@@ -22,7 +22,7 @@ jobs:
 
       - run: npm run lint
 
-      - run: npm test:report
+      - run: npm run test:report
 
       - store_artifacts:
           path: test-results.xml
