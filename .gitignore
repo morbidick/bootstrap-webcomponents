@@ -2,3 +2,4 @@ node_modules
 build
 analysis.json
 tests/visual/screenshots
+test-results.xml

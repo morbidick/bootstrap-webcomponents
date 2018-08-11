@@ -26,3 +26,6 @@ jobs:
 
       - store_artifacts:
           path: tests/visual/screenshots
+
+      - store_test_results:
+          path: test-results.xml
