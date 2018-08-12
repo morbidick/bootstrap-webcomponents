@@ -7,6 +7,7 @@ export const primary = {
 	alertcolor: "var(--bs-primary-alert-color, #004085)",
 	alertbg: "var(--bs-primary-alert-background-color, #cce5ff)",
 	alertborder:"var(--bs-primary-alert-border-color, #b8daff)",
+	alertlinkcolor:"var(--bs-primary-alert-link-color, #002752)",
 
 }
 export const secondary = {
@@ -18,6 +19,7 @@ export const secondary = {
 	alertcolor: "var(--bs-secondary-alert-color, #383d41)",
 	alertbg: "var(--bs-secondary-alert-background-color, #e2e3e5)",
 	alertborder:"var(--bs-secondary-alert-border-color, #d6d8db)",
+	alertlinkcolor:"var(--bs-secondary-alert-link-color, #202326)",
 }
 export const success = {
 	selector: '.success',
@@ -28,6 +30,7 @@ export const success = {
 	alertcolor: "var(--bs-success-alert-color, #155724)",
 	alertbg: "var(--bs-success-alert-background-color, #d4edda)",
 	alertborder:"var(--bs-success-alert-border-color, #c3e6cb)",
+	alertlinkcolor:"var(--bs-success-alert-link-color, #0b2e13)",
 }
 export const danger = {
 	selector: '.danger',
@@ -38,6 +41,7 @@ export const danger = {
 	alertcolor: "var(--bs-danger-alert-color, #721c24)",
 	alertbg: "var(--bs-danger-alert-background-color, #f8d7da)",
 	alertborder:"var(--bs-danger-alert-border-color, #f5c6cb)",
+	alertlinkcolor:"var(--bs-danger-alert-link-color, #491217)",
 }
 export const warning = {
 	selector: '.warning',
@@ -48,6 +52,7 @@ export const warning = {
 	alertcolor: "var(--bs-warning-alert-color, #856404)",
 	alertbg: "var(--bs-warning-alert-background-color, #fff3cd)",
 	alertborder:"var(--bs-warning-alert-border-color, #ffeeba)",
+	alertlinkcolor:"var(--bs-warning-alert-link-color, #533f03)",
 }
 export const info = {
 	selector: '.info',
@@ -58,6 +63,7 @@ export const info = {
 	alertcolor: "var(--bs-info-alert-color, #0c5460)",
 	alertbg: "var(--bs-info-alert-background-color, #d1ecf1)",
 	alertborder:"var(--bs-info-alert-border-color, #bee5eb)",
+	alertlinkcolor:"var(--bs-info-alert-link-color, #062c33)",
 }
 export const light = {
 	selector: '.light',
@@ -68,6 +74,7 @@ export const light = {
 	alertcolor: "var(--bs-light-alert-color, #818182)",
 	alertbg: "var(--bs-light-alert-background-color, #fefefe)",
 	alertborder:"var(--bs-light-alert-border-color, #fdfdfe)",
+	alertlinkcolor:"var(--bs-light-alert-link-color, #686868)",
 }
 export const dark = {
 	selector: '.dark',
@@ -78,6 +85,7 @@ export const dark = {
 	alertcolor: "var(--bs-dark-alert-color, #1b1e21)",
 	alertbg: "var(--bs-dark-alert-background-color, #d6d8d9)",
 	alertborder:"var(--bs-dark-alert-border-color, #c6c8ca)",
+	alertlinkcolor:"var(--bs-dark-alert-link-color, #040505)",
 };
 
 export default [

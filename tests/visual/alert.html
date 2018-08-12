@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+	<script type="module">
+		import "../../elements/alert.js";
+		import fontStyle from "../../styles/type.js";
+
+		document.head.insertAdjacentHTML("beforeend", fontStyle);
+	</script>
+	<style>
+		body {
+			margin: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<bs-alert class="primary">This is a primary alert with <a href="#">an example link</a>. Give it a click if you like.</bs-alert>
+	<bs-alert class="secondary">This is a secondary alert with <a href="#">an example link</a>. Give it a click if you like.</bs-alert>
+	<bs-alert class="success">This is a success alert with <a href="#">an example link</a>. Give it a click if you like.</bs-alert>
+	<bs-alert class="danger">This is a danger alert with <a href="#">an example link</a>. Give it a click if you like.</bs-alert>
+	<bs-alert class="warning">This is a warning alert with <a href="#">an example link</a>. Give it a click if you like.</bs-alert>
+	<bs-alert class="info">This is a info alert with <a href="#">an example link</a>. Give it a click if you like.</bs-alert>
+	<bs-alert class="light">This is a light alert with <a href="#">an example link</a>. Give it a click if you like.</bs-alert>
+	<bs-alert class="dark">This is a dark alert with <a href="#">an example link</a>. Give it a click if you like.</bs-alert>
+
+	<bs-alert dismissable class="primary">This is a primary dismissable alert.</bs-alert>
+	<bs-alert dismissable class="secondary">This is a secondary dismissable alert.</bs-alert>
+	<bs-alert dismissable class="success">This is a success dismissable alert.</bs-alert>
+	<bs-alert dismissable class="danger">This is a danger dismissable alert.</bs-alert>
+	<bs-alert dismissable class="warning">This is a warning dismissable alert.</bs-alert>
+	<bs-alert dismissable class="info">This is a info dismissable alert.</bs-alert>
+	<bs-alert dismissable class="light">This is a light dismissable alert.</bs-alert>
+	<bs-alert dismissable class="dark">This is a dark dismissable alert.</bs-alert>
+</body>
+
+</html>

@@ -9,7 +9,7 @@ const PNG = require('pngjs').PNG;
 const testDir = `tests/visual`;
 const screenshotDir = `tests/visual/screenshots`;
 
-describe('visual comparison to original bootstrap', function() {
+describe('implementation visually matches original bootstrap', function() {
   let polyserve, browser, page;
 
   // This is ran when the suite starts up.
@@ -37,6 +37,10 @@ describe('visual comparison to original bootstrap', function() {
   it('Buttons', async function() {
     return takeAndCompareScreenshot(page, 'button');
   });
+
+	it('Alerts', async function() {
+		return takeAndCompareScreenshot(page, 'alert');
+	});
 });
 
 // - page is a reference to the Puppeteer page.
@@ -48,11 +52,11 @@ async function takeAndCompareScreenshot(page, route) {
 
 	// take rebuild screenshot
 	await page.goto(`http://127.0.0.1:4000/${testDir}/${route}.html`);
-	await page.screenshot({path: filePath});
+	await page.screenshot({path: filePath, fullPage: true});
 
   // take upstream screenshot
   await page.goto(`http://127.0.0.1:4000/${testDir}/${route}_upstream.html`);
-  await page.screenshot({path: filePathUpstream});
+  await page.screenshot({path: filePathUpstream, fullPage: true});
 
   // Test to see if it's right.
   return compareScreenshots(filePath, filePathUpstream, filePathDiff);
