@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+	<script type="module">
+		import "../../elements/badge.js";
+		import fontStyle from "../../styles/type.js";
+
+		document.head.insertAdjacentHTML("beforeend", fontStyle);
+	</script>
+	<style>
+		body {
+			margin: 0;
+		}
+	</style>
+</head>
+
+<body>
+<p>
+	<bs-badge class="primary">Primary</bs-badge>
+	<bs-badge class="secondary">Secondary</bs-badge>
+	<bs-badge class="success">Success</bs-badge>
+	<bs-badge class="danger">Danger</bs-badge>
+	<bs-badge class="warning">Warning</bs-badge>
+	<bs-badge class="info">Info</bs-badge>
+	<bs-badge class="light">Light</bs-badge>
+	<bs-badge class="dark">Dark</bs-badge>
+</p><p>
+	<bs-badge class="pill primary">Primary</bs-badge>
+	<bs-badge class="pill secondary">Secondary</bs-badge>
+	<bs-badge class="pill success">Success</bs-badge>
+	<bs-badge class="pill danger">Danger</bs-badge>
+	<bs-badge class="pill warning">Warning</bs-badge>
+	<bs-badge class="pill info">Info</bs-badge>
+	<bs-badge class="pill light">Light</bs-badge>
+	<bs-badge class="pill dark">Dark</bs-badge>
+</p>
+</body>
+
+</html>

@@ -34,9 +34,13 @@ describe('implementation visually matches original bootstrap', function() {
   // This is ran after every test; clean up after your browser.
   afterEach(() => browser.close());
 
-  it('Buttons', async function() {
-    return takeAndCompareScreenshot(page, 'button');
+	it('Buttons', async function() {
+		return takeAndCompareScreenshot(page, 'button');
   });
+
+	it('Badges', async function() {
+		return takeAndCompareScreenshot(page, 'badge');
+	});
 
 	it('Alerts', async function() {
 		return takeAndCompareScreenshot(page, 'alert');

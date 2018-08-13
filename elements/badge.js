@@ -25,6 +25,7 @@ export default class BsBadge extends LitElement {
 					display: hidden;
 				}
 				a, span {
+					display: inline-block;
 					padding: .25em .4em;
 					border-top-left-radius: var(--bs-border-top-left-radius, .25em);
 					border-top-right-radius: var(--bs-border-top-right-radius, .25em);
