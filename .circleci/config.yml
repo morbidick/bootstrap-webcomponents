@@ -22,7 +22,7 @@ jobs:
 
       - run: npm run lint
 
-      - run: npm run test:report
+      - run: npm run test -- --reporter mocha-junit-reporter
 
       - store_artifacts:
           path: test-results.xml
