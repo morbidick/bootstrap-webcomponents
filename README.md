@@ -3,11 +3,9 @@
 [![CircleCI](https://circleci.com/gh/morbidick/bootstrap-webcomponents.svg?style=svg)](https://circleci.com/gh/morbidick/bootstrap-webcomponents)
 
 > ## 🛠 Status: In Development
-> Currently this is a proof of concept, components get implemented as needed. PRs welcome!
+> Components get implemented as needed. PRs welcome!
 
-Slightly opinionated* rewrite of bootstrap components as web components. See [the demo](demo/index.html) for all implemented features.
-
-*as in no pixel exact, color perfect copy leaving out certain edge-cases.
+Rewrite of bootstrap components as web components. See [the demo](demo/index.html) for all implemented features.
 
 ## Resources
 
