@@ -1,5 +1,7 @@
 # Bootstrap Web Components
 
+[![CircleCI](https://circleci.com/gh/morbidick/bootstrap-webcomponents.svg?style=svg)](https://circleci.com/gh/morbidick/bootstrap-webcomponents)
+
 > ## 🛠 Status: In Development
 > Currently this is a proof of concept, components get implemented as needed. PRs welcome!
 
