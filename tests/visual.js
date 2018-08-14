@@ -11,34 +11,34 @@ const testDir = `tests/visual`;
 const screenshotDir = `test-results/visual/screenshots`;
 
 describe('implementation visually matches original bootstrap', function() {
-  this.timeout(5000);
-  let polyserve, browser, page;
+	this.timeout(5000);
+	let polyserve, browser, page;
 
-  // This is ran when the suite starts up.
-  before(async function() {
-    // This is where you would substitute your python or Express server or whatever.
-    polyserve = await startServer({port:4000, root:path.join(__dirname, '..'), moduleResolution:'node'})
+	// This is ran when the suite starts up.
+	before(async function() {
+		// This is where you would substitute your python or Express server or whatever.
+		polyserve = await startServer({port:4000, root:path.join(__dirname, '..'), moduleResolution:'node'})
 
-    // Create the test directory if needed.
-    if (!fs.existsSync(screenshotDir)) shell.mkdir('-p', screenshotDir);
-  });
+		// Create the test directory if needed.
+		if (!fs.existsSync(screenshotDir)) shell.mkdir('-p', screenshotDir);
+	});
 
-  // This is ran when the suite is done. Stop your server here.
-  after((done) => polyserve.close(done));
+	// This is ran when the suite is done. Stop your server here.
+	after((done) => polyserve.close(done));
 
-  // This is ran before every test. It's where you start a clean browser.
-  beforeEach(async function() {
-    browser = await puppeteer.launch();
-    page = await browser.newPage();
+	// This is ran before every test. It's where you start a clean browser.
+	beforeEach(async function() {
+		browser = await puppeteer.launch();
+		page = await browser.newPage();
 		page.setViewport({width: 1024, height: 768});
-  });
+	});
 
-  // This is ran after every test; clean up after your browser.
-  afterEach(() => browser.close());
+	// This is ran after every test; clean up after your browser.
+	afterEach(() => browser.close());
 
 	it('Buttons', async function() {
 		return takeAndCompareScreenshot(page, 'button');
-  });
+	});
 
 	it('Badges', async function() {
 		return takeAndCompareScreenshot(page, 'badge');
@@ -60,40 +60,40 @@ async function takeAndCompareScreenshot(page, route) {
 	await page.goto(`http://127.0.0.1:4000/${testDir}/${route}.html`);
 	await page.screenshot({path: filePath, fullPage: true});
 
-  // take upstream screenshot
-  await page.goto(`http://127.0.0.1:4000/${testDir}/${route}_upstream.html`);
-  await page.screenshot({path: filePathUpstream, fullPage: true});
+	// take upstream screenshot
+	await page.goto(`http://127.0.0.1:4000/${testDir}/${route}_upstream.html`);
+	await page.screenshot({path: filePathUpstream, fullPage: true});
 
-  // Test to see if it's right.
-  return compareScreenshots(filePath, filePathUpstream, filePathDiff);
+	// Test to see if it's right.
+	return compareScreenshots(filePath, filePathUpstream, filePathDiff);
 }
 
 function compareScreenshots(file1, file2, diffPath) {
-  return new Promise((resolve, reject) => {
-    const img1 = fs.createReadStream(file1).pipe(new PNG()).on('parsed', doneReading);
-    const img2 = fs.createReadStream(file2).pipe(new PNG()).on('parsed', doneReading);
+	return new Promise((resolve, reject) => {
+		const img1 = fs.createReadStream(file1).pipe(new PNG()).on('parsed', doneReading);
+		const img2 = fs.createReadStream(file2).pipe(new PNG()).on('parsed', doneReading);
 
-    let filesRead = 0;
-    function doneReading() {
-      // Wait until both files are read.
-      if (++filesRead < 2) return;
+		let filesRead = 0;
+		function doneReading() {
+			// Wait until both files are read.
+			if (++filesRead < 2) return;
 
-      // The files should be the same size.
-      expect(img1.width, 'image widths are the same').equal(img2.width);
-      expect(img1.height, 'image heights are the same').equal(img2.height);
+			// The files should be the same size.
+			expect(img1.width, 'image widths are the same').equal(img2.width);
+			expect(img1.height, 'image heights are the same').equal(img2.height);
 
-      // Do the visual diff.
-      const diff = new PNG({width: img1.width, height: img1.height});
-      const numDiffPixels = pixelmatch(
-          img1.data, img2.data, diff.data, img1.width, img1.height,
-          {threshold: 0.15});
+			// Do the visual diff.
+			const diff = new PNG({width: img1.width, height: img1.height});
+			const numDiffPixels = pixelmatch(
+				img1.data, img2.data, diff.data, img1.width, img1.height,
+				{threshold: 0.15});
 
 			// write the diff
 			diff.pack().pipe(fs.createWriteStream(diffPath));
 
-      // The files should look the same.
-      expect(numDiffPixels, 'number of different pixels').equal(0);
-      resolve();
-    }
-  });
+			// The files should look the same.
+			expect(numDiffPixels, 'number of different pixels').equal(0);
+			resolve();
+		}
+	});
 }
