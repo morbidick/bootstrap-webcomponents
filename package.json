@@ -12,7 +12,8 @@
     "pngjs": "^3.3.3",
     "polymer-cli": "^1.7.3",
     "polyserve": "^0.27.0",
-    "puppeteer": "^1.0.0"
+    "puppeteer": "^1.0.0",
+    "shelljs": "^0.8.2"
   },
   "scripts": {
     "start": "npm run serve",
