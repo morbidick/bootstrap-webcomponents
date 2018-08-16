@@ -12,11 +12,15 @@
     "pngjs": "^3.3.3",
     "polyserve": "^0.27.0",
     "puppeteer": "^1.0.0",
+    "rollup": "^0.59.4",
+    "rollup-plugin-babel-minify": "^5.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
     "shelljs": "^0.8.2"
   },
   "scripts": {
     "start": "npm run serve",
     "serve": "polyserve --npm --module-resolution=node",
-    "test": "mocha tests/visual.js"
+    "test": "mocha tests/visual.js",
+    "build": "rollup -c"
   }
 }

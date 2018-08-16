@@ -29,3 +29,10 @@ jobs:
 
       - store_test_results:
           path: test-results
+
+      - run:
+          name: build
+          command: npm run build
+
+      - store_artifacts:
+          path: dist

@@ -1,5 +1,5 @@
 // https://getbootstrap.com/docs/4.1/content/typography/
-import {html} from 'lit-html';
+import {html} from 'lit-html/lit-html.js';
 import {primary} from './colors.js';
 
 export const fontFamilySansSerif = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';

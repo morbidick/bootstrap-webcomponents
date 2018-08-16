@@ -1,4 +1,4 @@
-import {LitElement, html} from '@polymer/lit-element';
+import {LitElement, html} from '@polymer/lit-element/lit-element.js';
 import colors from '../styles/colors.js';
 
 export default class BsButton extends LitElement {
