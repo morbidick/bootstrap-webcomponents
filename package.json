@@ -10,17 +10,13 @@
     "mocha-junit-reporter": "^1.18.0",
     "pixelmatch": "^4.0.2",
     "pngjs": "^3.3.3",
-    "polymer-cli": "^1.7.3",
     "polyserve": "^0.27.0",
     "puppeteer": "^1.0.0",
     "shelljs": "^0.8.2"
   },
   "scripts": {
     "start": "npm run serve",
-    "analyze": "polymer analyze > analysis.json",
-    "serve": "polymer serve --hostname 0.0.0.0",
-    "build": "polymer build",
-    "lint": "polymer lint",
+    "serve": "polyserve --npm --module-resolution=node",
     "test": "mocha tests/visual.js"
   }
 }

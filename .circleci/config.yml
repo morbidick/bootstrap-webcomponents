@@ -20,8 +20,6 @@ jobs:
             - node_modules
           key: dependencies-{{ checksum "package.json" }}
 
-      - run: npm run lint
-
       - run:
           name: visual
           command: npm run test -- --reporter mocha-junit-reporter --reporter-options mochaFile=./test-results/visual/result.xml
