@@ -1,9 +1,10 @@
 // https://getbootstrap.com/docs/4.1/content/typography/
-import {primary} from './colors.js'
+import {html} from 'lit-html';
+import {primary} from './colors.js';
 
 export const fontFamilySansSerif = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 export const fontFamilyMonospace = 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
-export const fontStyle = `<style>
+export const fontStyle = html`<style>
 	:root {
 		font-family: var(--bs-body-font-family, ${fontFamilySansSerif});
 		line-height: 1.5;
@@ -29,7 +30,7 @@ export const fontStyle = `<style>
 		margin-bottom: 1rem;
 	}
 </style>`;
-export const linkStyle = `<style>
+export const linkStyle = html`<style>
 	a {
 		color: var(--bs-link-color, ${primary.color});
 		text-decoration: none;
@@ -38,7 +39,7 @@ export const linkStyle = `<style>
 		text-decoration: underline;
 	}
 </style>`
-export const hrStyle = `<style>
+export const hrStyle = html`<style>
 	hr {
 		margin-top: 1rem;
 		margin-bottom: 1rem;
@@ -48,4 +49,8 @@ export const hrStyle = `<style>
 	}
 </style>`
 
-export default fontStyle + linkStyle + hrStyle;
+export default html`
+	${fontStyle}
+	${linkStyle}
+	${hrStyle}
+`;
