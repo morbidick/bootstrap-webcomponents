@@ -12,13 +12,14 @@
 	<script type="module">
 		import {render} from 'lit-html/lit-html.js';
 		import baseStyle from "../styles/type.js";
+		import {renderToHead} from "../../helpers/helpers.js";
 		import "@polymer/iron-demo-helpers/demo-snippet.js";
 		import "../elements/button.js";
 		import "../elements/button-group.js";
 		import "../elements/badge.js";
 		import "../elements/alert.js";
 
-		render(baseStyle, document.getElementById("style-container"));
+		renderToHead(baseStyle);
 	</script>
 	<style>
 		.centered {
@@ -26,7 +27,6 @@
 			margin: 0 auto;
 		}
 	</style>
-	<style id="style-container"></style>
 </head>
 
 <body>

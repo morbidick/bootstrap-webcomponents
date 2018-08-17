@@ -8,16 +8,16 @@
 	<script type="module">
 		import {render} from 'lit-html/lit-html.js';
 		import baseStyle from "../../styles/type.js";
+		import {renderToHead} from "../../helpers/helpers.js";
 		import "../../elements/alert.js";
 
-		render(baseStyle, document.getElementById("style-container"));
+		renderToHead(baseStyle);
 	</script>
 	<style>
 		body {
 			margin: 0;
 		}
 	</style>
-	<style id="style-container"></style>
 </head>
 
 <body>
