@@ -32,6 +32,13 @@
     "start": "npm run serve",
     "serve": "polyserve --npm --module-resolution=node",
     "test": "mocha tests/visual.js",
-    "build": "rollup -c"
-  }
+    "build": "rollup -c",
+    "prepack": "npm test && npm run build"
+  },
+  "files": [
+    "dist",
+    "elements",
+    "helpers",
+    "styles"
+  ]
 }
