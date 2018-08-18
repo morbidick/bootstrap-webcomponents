@@ -1,5 +1,6 @@
 import minify from 'rollup-plugin-babel-minify';
 import resolve from 'rollup-plugin-node-resolve';
+import filesize from 'rollup-plugin-filesize';
 const outFolder = 'dist';
 
 export default [
@@ -19,6 +20,6 @@ export default [
 			format: 'iife',
 			name: 'BootstrapElements'
 		},
-		plugins: [resolve(), minify({ comments: false })]
+		plugins: [resolve(), minify({ comments: false }), filesize({showBrotliSize: true})]
 	}
 ];

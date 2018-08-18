@@ -24,6 +24,7 @@
     "puppeteer": "^1.0.0",
     "rollup": "^0.59.4",
     "rollup-plugin-babel-minify": "^5.0.0",
+    "rollup-plugin-filesize": "^4.0.1",
     "rollup-plugin-node-resolve": "^3.3.0",
     "shelljs": "^0.8.2"
   },
