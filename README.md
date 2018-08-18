@@ -7,21 +7,41 @@
 
 Rewrite of bootstrap components as web components. See [the demo](demo/index.html) for all implemented features.
 
-## Resources
+## Motivation
 
-### Bootstrap
+This isn't just a webcomponents wrapper around the bootstrap css, this aims to be a clean and simple rewrite easily understandable to everyone new to the webcomponents standards.
 
-* [components](https://getbootstrap.com/docs/4.1/components/)
-* [variables](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss)
+* No build chain / preprocessors
+* Use web standards over big libraries where possible (even if that means loosing compatibility eg. dialog element)
+* Provide support to projects to include polyfills and buildsteps for the above points
 
-### Web components
+## Install
 
-* [aria authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/)
-* [Elix](https://github.com/elix/elix)
-* https://developers.google.com/web/fundamentals/web-components/best-practices
-* https://github.com/GoogleChromeLabs/howto-components
+```bash
+npm install @morbidick/bootstrap
+```
 
-#### Styling
+## Usage
 
-* [vaadin themeable mixin](https://github.com/vaadin/vaadin-themable-mixin)
-* [::part and ::theme spec](https://drafts.csswg.org/css-shadow-parts-1/)
+Import into your module script:
+
+```javascript
+import { BsButton, BsBadge } from "@morbidick/bootstrap/elements.js"
+```
+
+Alternatively, load a bundled version from CDN:
+
+```html
+<script src="https://unpkg.com/@morbidick/bootstrap@latest/dist/elements.bundled.min.js"></script>
+```
+
+Use it in your web page:
+
+```html
+<bs-button href="#link">Click Me</bs-button>
+<bs-badge class="warning">warning</bs-badge>
+```
+
+## Development
+
+View the [dev readme](DEVELOPE.md) for instructions and further resources.
