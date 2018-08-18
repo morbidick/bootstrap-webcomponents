@@ -4,18 +4,18 @@ const outFolder = 'dist';
 
 export default [
 	{
-		input: 'index.js',
+		input: 'elements.js',
 		output: {
-			file: `${outFolder}/bundled.js`,
+			file: `${outFolder}/elements.bundled.js`,
 			format: 'iife',
 			name: 'BootstrapElements'
 		},
 		plugins: [resolve()]
 	},
 	{
-		input: 'index.js',
+		input: 'elements.js',
 		output: {
-			file: `${outFolder}/bundled.min.js`,
+			file: `${outFolder}/elements.bundled.min.js`,
 			format: 'iife',
 			name: 'BootstrapElements'
 		},
