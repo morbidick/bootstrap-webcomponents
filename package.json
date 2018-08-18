@@ -1,4 +1,14 @@
 {
+  "name": "@morbidick/bootstrap",
+  "version": "0.1.0",
+  "description": "Rewrite of bootstrap components as web components",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morbidick/bootstrap-webcomponents"
+  },
+  "main": "elements.bundled.js",
+  "module": "elements.js",
   "dependencies": {
     "@polymer/lit-element": "^0.5.2"
   },
