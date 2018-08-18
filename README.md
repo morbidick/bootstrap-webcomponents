@@ -1,6 +1,7 @@
 # Bootstrap Web Components
 
 [![CircleCI](https://circleci.com/gh/morbidick/bootstrap-webcomponents.svg?style=shield)](https://circleci.com/gh/morbidick/bootstrap-webcomponents)
+[![npm version](https://badge.fury.io/js/@morbidick/bootstrap.svg)](https://www.npmjs.com/package/@morbidick/bootstrap)
 
 > ## 🛠 Status: In Development
 > Components get implemented as needed. PRs welcome!
