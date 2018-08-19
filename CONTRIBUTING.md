@@ -1,4 +1,8 @@
-# Development readme
+# How to contribute
+
+## Communicating
+
+* [polymer slack](https://bit.ly/polymerslack) `#bootstrap`
 
 ## Setup
 
@@ -39,6 +43,7 @@
 
 #### Styling
 
+* [native css reset](https://caniuse.com/#search=appearance)
 * [vaadin themeable mixin](https://github.com/vaadin/vaadin-themable-mixin)
 * [::part and ::theme spec](https://drafts.csswg.org/css-shadow-parts-1/)
 * [CSS Modules](https://github.com/w3c/webcomponents/issues/759) and [constructible Stylesheets](https://github.com/WICG/construct-stylesheets/blob/gh-pages/explainer.md)

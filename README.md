@@ -45,4 +45,4 @@ Use it in your web page:
 
 ## Development
 
-View the [dev readme](DEVELOPE.md) for instructions and further resources.
+View the [contributing notes](CONTRIBUTING.md) for instructions and further resources.
