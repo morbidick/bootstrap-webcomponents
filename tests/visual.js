@@ -1,11 +1,10 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const puppeteer = require('puppeteer');
 const pixelmatch = require('pixelmatch');
 const expect = require('chai').expect;
 const {startServer} = require('polyserve');
 const PNG = require('pngjs').PNG;
-const shell = require('shelljs');
 
 const testDir = `tests/visual`;
 const screenshotDir = `test-results/visual/screenshots`;
@@ -20,7 +19,7 @@ describe('implementation visually matches original bootstrap', function() {
 		polyserve = await startServer({port:4000, root:path.join(__dirname, '..'), moduleResolution:'node'})
 
 		// Create the test directory if needed.
-		if (!fs.existsSync(screenshotDir)) shell.mkdir('-p', screenshotDir);
+		await fs.ensureDir(screenshotDir);
 	});
 
 	// This is ran when the suite is done. Stop your server here.
