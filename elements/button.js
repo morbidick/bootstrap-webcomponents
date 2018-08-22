@@ -10,6 +10,7 @@ export default class BsButton extends LitElement {
 			disabled: Boolean,
 			// set to an url to get an anchor element with button styling
 			href: String,
+			theme: String,
 			// set to true to act as a toggle button
 			toggle: Boolean,
 			// the button type (default: button)
@@ -21,14 +22,12 @@ export default class BsButton extends LitElement {
 		super();
 		this.active = false;
 		this.disabled = false;
+		this.theme = 'secondary';
 		this.type = "button";
 	}
 
 	connectedCallback() {
 		super.connectedCallback();
-		if (!this.hasAttribute('class')) {
-			this.setAttribute('class', 'secondary');
-		}
 	}
 
 	_render({active, disabled, href, toggle, type}) {
@@ -79,31 +78,31 @@ export default class BsButton extends LitElement {
 				:host > [disabled] {
 					opacity: 0.65;
 				}
-				:host(.small) > * {
+				:host([theme~="small"]) > * {
 					font-size: .875rem;
 				}
-				:host(.large) > * {
+				:host([theme~="large"]) > * {
 					font-size: 1.25rem;
 				}
 				*:focus:not([disabled]) {
 					box-shadow: 0 0 0 .2rem var(--bs-button-focusring-color);
 				}
-				:host(:not(.outline)) > * {
+				:host(:not([theme~="outline"])) > * {
 					background-color: var(--bs-button-background-color);
 					color: var(--bs-button-color);
 				}
-				:host(:not(.outline)) > *:hover:not([disabled]) {
+				:host(:not([theme~="outline"])) > *:hover:not([disabled]) {
 					background-color: var(--bs-button-hover-background-color);
 				}
-				:host(.outline) > * {
+				:host([theme~="outline"]) > * {
 					color: var(--bs-button-background-color);
 					border-color: var(--bs-button-background-color);
 				}
-				:host(.outline) > *:hover:not([disabled]), :host(.outline) > [active] {
+				:host([theme~="outline"]) > *:hover:not([disabled]), :host([theme~="outline"]) > [active] {
 					background-color: var(--bs-button-background-color);
 					color: var(--bs-button-color);
 				}
-				:host(.outline) > *:hover:not([active]) {
+				:host([theme~="outline"]) > *:hover:not([active]) {
 					filter: none;
 				}
 				/* color variants */

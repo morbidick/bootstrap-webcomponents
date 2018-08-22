@@ -5,14 +5,17 @@ export default class BsBadge extends LitElement {
 	static get properties() {
 		return {
 			href: String,
+			theme: String,
 		}
+	}
+
+	constructor() {
+		super();
+		this.theme = 'secondary';
 	}
 
 	connectedCallback() {
 		super.connectedCallback();
-		if (!this.hasAttribute('class')) {
-			this.setAttribute('class', 'secondary');
-		}
 	}
 
 	_render({href}) {
@@ -55,7 +58,7 @@ export default class BsBadge extends LitElement {
 						--bs-badge-hover-background-color: ${hoverbg};
 					}`
 				)}
-				:host(.pill) > * {
+				:host([theme~="pill"]) > * {
 					padding-right: .6em;
 					padding-left: .6em;
 					border-radius: 10em;

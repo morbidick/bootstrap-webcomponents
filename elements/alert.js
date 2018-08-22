@@ -5,13 +5,17 @@ export default class BsAlert extends LitElement {
 	static get properties() {
 		return {
 			dismissable: Boolean,
+			theme: String,
 		}
 	}
+
+	constructor() {
+		super();
+		this.theme = 'secondary';
+	}
+
 	connectedCallback() {
 		super.connectedCallback();
-		if (!this.hasAttribute('class')) {
-			this.setAttribute('class', 'secondary');
-		}
 		if (!this.hasAttribute('role')) {
 			this.setAttribute('role', 'alert');
 		}

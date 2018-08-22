@@ -1,5 +1,5 @@
 export const primary = {
-	selector: '.primary',
+	selector: '[theme~="primary"]',
 	color: "var(--bs-primary-color, #007bff)",
 	focusring: "var(--bs-primary-focusring-color, #007bff50)",
 	hoverbg: "var(--bs-primary-hover-background-color, #0069d9)",
@@ -11,7 +11,7 @@ export const primary = {
 
 }
 export const secondary = {
-	selector: '.secondary',
+	selector: '[theme~="secondary"]',
 	color: "var(--bs-secondary-color, #6c757d)",
 	focusring: "var(--bs-secondary-focusring-color, #6c757d50)",
 	hoverbg: "var(--bs-secondary-hover-background-color, #5a6268)",
@@ -22,7 +22,7 @@ export const secondary = {
 	alertlinkcolor:"var(--bs-secondary-alert-link-color, #202326)",
 }
 export const success = {
-	selector: '.success',
+	selector: '[theme~="success"]',
 	color: "var(--bs-success-color, #28a745)",
 	focusring: "var(--bs-success-focusring-color, #28a74550)",
 	hoverbg: "var(--bs-success-hover-background-color, #218838)",
@@ -33,7 +33,7 @@ export const success = {
 	alertlinkcolor:"var(--bs-success-alert-link-color, #0b2e13)",
 }
 export const danger = {
-	selector: '.danger',
+	selector: '[theme~="danger"]',
 	color: "var(--bs-danger-color, #dc3545)",
 	focusring: "var(--bs-danger-focusring-color, #dc354550)",
 	hoverbg: "var(--bs-danger-hover-background-color, #c82333)",
@@ -44,7 +44,7 @@ export const danger = {
 	alertlinkcolor:"var(--bs-danger-alert-link-color, #491217)",
 }
 export const warning = {
-	selector: '.warning',
+	selector: '[theme~="warning"]',
 	color: "var(--bs-warning-color, #ffc107)",
 	focusring: "var(--bs-warning-focusring-color, #ffc10750)",
 	hoverbg: "var(--bs-warning-hover-background-color, #e0a800)",
@@ -55,7 +55,7 @@ export const warning = {
 	alertlinkcolor:"var(--bs-warning-alert-link-color, #533f03)",
 }
 export const info = {
-	selector: '.info',
+	selector: '[theme~="info"]',
 	color: "var(--bs-info-color, #17a2b8)",
 	focusring: "var(--bs-info-focusring-color, #17a2b850)",
 	hoverbg: "var(--bs-info-hover-background-color, #138496)",
@@ -66,7 +66,7 @@ export const info = {
 	alertlinkcolor:"var(--bs-info-alert-link-color, #062c33)",
 }
 export const light = {
-	selector: '.light',
+	selector: '[theme~="light"]',
 	color: "var(--bs-light-color, #f8f9fa)",
 	focusring: "var(--bs-light-focusring-color, #f8f9fa50)",
 	hoverbg: "var(--bs-light-hover-background-color, #e2e6ea)",
@@ -77,7 +77,7 @@ export const light = {
 	alertlinkcolor:"var(--bs-light-alert-link-color, #686868)",
 }
 export const dark = {
-	selector: '.dark',
+	selector: '[theme~="dark"]',
 	color: "var(--bs-dark-color, #343a40)",
 	focusring: "var(--bs-dark-focusring-color, #343a4050)",
 	hoverbg: "var(--bs-dark-hover-background-color, #23272b)",
