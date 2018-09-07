@@ -2,6 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/morbidick/bootstrap-webcomponents.svg?style=shield)](https://circleci.com/gh/morbidick/bootstrap-webcomponents)
 [![npm version](https://img.shields.io/npm/v/@morbidick/bootstrap.svg)](https://www.npmjs.com/package/@morbidick/bootstrap)
+[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@morbidick/bootstrap.svg)](https://bundlephobia.com/result?p=@morbidick/bootstrap)
 
 > ## 🛠 Status: In Development
 > Components get implemented as needed. PRs welcome!
