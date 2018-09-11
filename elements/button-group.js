@@ -1,17 +1,10 @@
 import { LitElement, html } from '@polymer/lit-element/lit-element.js';
 
 export default class BsButtonGroup extends LitElement {
-	static get properties() {
-		return {
-			disabled: Boolean,
-			active: Boolean,
-		}
-	}
-
-	_render() {
+	render() {
 		return html`
 			<style>
-				:host(:not([disabled])) {
+				:host {
 					display: inline-flex;
 					vertical-align: middle;
 				}

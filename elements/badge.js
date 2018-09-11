@@ -4,8 +4,14 @@ import colors from '../styles/colors.js';
 export default class BsBadge extends LitElement {
 	static get properties() {
 		return {
-			href: String,
-			theme: String,
+			href: {
+				type: String,
+				reflect: true,
+			},
+			theme: {
+				type: String,
+				reflect: true,
+			},
 		}
 	}
 
@@ -14,11 +20,7 @@ export default class BsBadge extends LitElement {
 		this.theme = 'secondary';
 	}
 
-	connectedCallback() {
-		super.connectedCallback();
-	}
-
-	_render({href}) {
+	render() {
 		return html`
 			<style>
 				:host {
@@ -64,7 +66,7 @@ export default class BsBadge extends LitElement {
 					border-radius: 10em;
 				}
 			</style>
-			${href ? html`<a href$=${href}><slot></slot></a>`: html`<span><slot></slot></span>`}
+			${this.href ? html`<a href=${this.href}><slot></slot></a>`: html`<span><slot></slot></span>`}
 		`;
 	}
 }

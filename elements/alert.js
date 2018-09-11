@@ -4,8 +4,14 @@ import colors from '../styles/colors.js';
 export default class BsAlert extends LitElement {
 	static get properties() {
 		return {
-			dismissable: Boolean,
-			theme: String,
+			dismissable: {
+				type: Boolean,
+				reflect: true,
+			},
+			theme: {
+				type: String,
+				reflect: true,
+			},
 		}
 	}
 
@@ -21,7 +27,7 @@ export default class BsAlert extends LitElement {
 		}
 	}
 
-	_render() {
+	render() {
 		return html`
 			<style>
 				:host {
@@ -91,7 +97,7 @@ export default class BsAlert extends LitElement {
 			<button
 				type="button"
 				aria-label="Close"
-				on-click=${this.remove.bind(this)}>
+				@click=${this.remove.bind(this)}>
 				<span aria-hidden="true">&times;</span>
 			</button>
 		`;
@@ -103,19 +109,6 @@ export default class BsAlert extends LitElement {
 			bubbles: false,
 			composed: true,
 		}));
-	}
-
-	set dismissable(value) {
-		const isDismissable = Boolean(value);
-		this._setProperty('dismissable', isDismissable);
-		if (isDismissable) {
-			this.setAttribute('dismissable', '');
-		} else {
-			this.removeAttribute('dismissable');
-		}
-	}
-	get dismissable() {
-		return this.hasAttribute('dismissable');
 	}
 }
 

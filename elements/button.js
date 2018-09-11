@@ -5,16 +5,34 @@ export default class BsButton extends LitElement {
 	static get properties() {
 		return {
 			// set button state to active
-			active: Boolean,
+			active: {
+				type: Boolean,
+				reflect: true,
+			},
 			// disable the button
-			disabled: Boolean,
+			disabled: {
+				type: Boolean,
+				reflect: true,
+			},
 			// set to an url to get an anchor element with button styling
-			href: String,
-			theme: String,
+			href: {
+				type: String,
+				reflect: true,
+			},
+			theme: {
+				type: String,
+				reflect: true,
+			},
 			// set to true to act as a toggle button
-			toggle: Boolean,
+			toggle: {
+				type: Boolean,
+				reflect: true,
+			},
 			// the button type (default: button)
-			type: String,
+			type: {
+				type: String,
+				reflect: true,
+			},
 		}
 	}
 
@@ -23,14 +41,13 @@ export default class BsButton extends LitElement {
 		this.active = false;
 		this.disabled = false;
 		this.theme = 'secondary';
-		this.type = "button";
+		this.type = 'button';
+
+		this._boundToggleClickHandler = this._toggleClickHandler.bind(this);
+		this._boundToggleKeypressHandle = this._toggleKeypressHandler.bind(this);
 	}
 
-	connectedCallback() {
-		super.connectedCallback();
-	}
-
-	_render({active, disabled, href, toggle, type}) {
+	render() {
 		return html`
 			<style>
 				:host(:not([hidden])) {
@@ -115,31 +132,18 @@ export default class BsButton extends LitElement {
 					}`
 				)}
 			</style>
-			${href ? html`<a id="button" href$=${href} disabled?=${disabled} active?=${active}><slot></slot></a>`:
-			  !toggle ? html`<button id="button" type$=${type} disabled?=${disabled} active?=${active}><slot></slot></button>`:
+			${this.href ? html`<a id="button" href=${this.href} ?disabled=${this.disabled} ?active=${this.active}><slot></slot></a>`:
+			  !this.toggle ? html`<button id="button" type=${this.type} ?disabled=${this.disabled} ?active=${this.active}><slot></slot></button>`:
 			  html`<button
 				id="button"
 				type="button"
-				disabled?=${disabled}
-				active?=${active}
-				aria-pressed$=${active}
-				on-click=${(event) => {
-					event.preventDefault();
-					this._toggle();
-				}}
-				on-keydown=${(event) => {
-					if (event.altKey)
-						return;
-
-					switch (event.code) {
-						case "Enter":
-						case "Space":
-							event.preventDefault();
-							this._toggle();
-							break;
-						default:
-							return;
-				}}}><slot></slot></button>
+				aria-pressed=${this.active}
+				?disabled=${this.disabled}
+				?active=${this.active}
+				@click=${this._boundToggleClickHandler}
+				@keydown=${this._boundToggleKeypressHandler}>
+				<slot></slot>
+			  </button>
 			`}
 		`;
 	}
@@ -156,22 +160,39 @@ export default class BsButton extends LitElement {
 	/**
 	 * Fire change notification event
 	 */
-	_propertiesChanged(props, changedProps, oldProps) {
-		super._propertiesChanged(props, changedProps, oldProps);
+	update(props) {
+		super.update(props);
 
-		if('active' in changedProps) {
-			// dont fire on initial set
-			if (oldProps['active'] !== undefined) {
-				this.dispatchEvent(new CustomEvent('active-changed', {
-					detail: {
-						value: changedProps['active'],
-					},
-					bubbles: false,
-					composed: true,
-				}));
-			}
+		if (props.has('active')) {
+			this.dispatchEvent(new CustomEvent('active-changed', {
+				detail: {
+					value: this.active,
+				},
+				bubbles: false,
+				composed: true,
+			}));
 		}
-	};
+	}
+
+	_toggleClickHandler(event) {
+		event.preventDefault();
+		this._toggle();
+	}
+
+	_toggleKeypressHandler(event) {
+		if (event.altKey)
+			return;
+
+		switch (event.code) {
+			case "Enter":
+			case "Space":
+				event.preventDefault();
+				this._toggle();
+				break;
+			default:
+				return;
+		}
+	}
 
 	/**
 	 * Pass external clicks to the internal button
