@@ -1,13 +1,15 @@
 import {LitElement, html} from '@polymer/lit-element/lit-element.js';
+import notify from '@morbidick/lit-element-notify/lit-element-notify.js';
 import colors from '../styles/colors.js';
 
-export default class BsButton extends LitElement {
+export default class BsButton extends notify(LitElement) {
 	static get properties() {
 		return {
 			// set button state to active
 			active: {
 				type: Boolean,
 				reflect: true,
+				notify: true,
 			},
 			// disable the button
 			disabled: {
@@ -155,23 +157,6 @@ export default class BsButton extends LitElement {
 		if (this.disabled)
 			return;
 		this.active = !this.active;
-	}
-
-	/**
-	 * Fire change notification event
-	 */
-	update(props) {
-		super.update(props);
-
-		if (props.has('active')) {
-			this.dispatchEvent(new CustomEvent('active-changed', {
-				detail: {
-					value: this.active,
-				},
-				bubbles: false,
-				composed: true,
-			}));
-		}
 	}
 
 	_toggleClickHandler(event) {
