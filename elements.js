@@ -1,3 +1,4 @@
-export {default as BsAlert} from './elements/alert.js';
-export {default as BsBadge} from './elements/badge.js';
-export {default as BsButton} from './elements/button.js';
+export * from './elements/alert.js';
+export * from './elements/badge.js';
+export * from './elements/button-group.js';
+export * from './elements/button.js';
