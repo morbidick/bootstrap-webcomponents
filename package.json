@@ -11,8 +11,8 @@
   "module": "elements.js",
   "dependencies": {
     "@morbidick/lit-element-notify": "^0.1.0",
-    "@polymer/lit-element": "^0.6.1",
-    "lit-html": "^0.11.4"
+    "@polymer/lit-element": "^0.6.2",
+    "lit-html": "^0.12.0"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",

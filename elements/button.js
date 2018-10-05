@@ -44,9 +44,6 @@ export default class BsButton extends notify(LitElement) {
 		this.disabled = false;
 		this.theme = 'secondary';
 		this.type = 'button';
-
-		this._boundToggleClickHandler = this._toggleClickHandler.bind(this);
-		this._boundToggleKeypressHandle = this._toggleKeypressHandler.bind(this);
 	}
 
 	render() {
@@ -142,8 +139,8 @@ export default class BsButton extends notify(LitElement) {
 				aria-pressed=${this.active}
 				?disabled=${this.disabled}
 				?active=${this.active}
-				@click=${this._boundToggleClickHandler}
-				@keydown=${this._boundToggleKeypressHandler}>
+				@click=${this._toggleClickHandler}
+				@keydown=${this._toggleKeypressHandler}>
 				<slot></slot>
 			  </button>
 			`}
