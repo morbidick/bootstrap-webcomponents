@@ -10,7 +10,7 @@ const testDir = `tests/visual`;
 const screenshotDir = `test-results/visual/screenshots`;
 
 describe('implementation visually matches original bootstrap', function() {
-	this.timeout(9000);
+	this.timeout(20000);
 	let polyserve, browser, page;
 
 	// This is ran when the suite starts up.
