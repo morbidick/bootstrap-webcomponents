@@ -14,6 +14,8 @@ Rewrite of bootstrap components as web components. See [the demo](demo/index.htm
 This isn't just a webcomponents wrapper around the bootstrap css, this aims to be a clean and simple rewrite easily understandable to everyone new to the webcomponents standards.
 
 * No build chain / preprocessors
+* allow easy theming via css custom properties
+* provide a clear api to end users in the form of attributes
 * Use web standards over big libraries where possible (even if that means loosing compatibility eg. dialog element)
 * Provide support to projects to include polyfills and buildsteps for the above points
 

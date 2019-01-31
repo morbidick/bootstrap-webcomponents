@@ -11,6 +11,25 @@
 * Run the [tests](tests) with `npm test`
 * To produce a bundle run `npm run build`
 
+## Implementing a new compoment
+
+* write down a list of all theme and functional variants in `tests/component_upstream.html`
+* evaluate native elements (e.g. dialog for modals or progress for the progress bar)
+* design a simple api surface (e.g. setting the `href` or `toggle` attribute to the button component changes the underlying element) in `tests/component.html`
+* open an issue with your idea
+* implement the dom and functional parts
+  * try to keep it simple
+  * prefer `slots` over attributes/properties
+  * provide sane defaults (a11y and user experience wise)
+* implement the styles
+  * have a look at the [upstream scss](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_buttons.scss)
+  * have a look at the resulting css in [your browser](http://localhost:8081/tests/button_upstream.html) (`npm start` first)
+  * write the base css first, prefix css custom proberties with `bs`
+  * for performance reasons implement static css that selects on host attributes
+  * for theme variants loop over `styles/colors.js`
+  * run the screenshot tests `npm test`, see the results in [test-results](test-results)
+* extra goal: implement functional browser tests
+
 ## Resources
 
 ### Bootstrap
