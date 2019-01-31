@@ -56,11 +56,11 @@ async function takeAndCompareScreenshot(page, route) {
 	const filePathDiff = `${screenshotDir}/${route}_diff.png`;
 
 	// take rebuild screenshot
-	await page.goto(`http://127.0.0.1:4000/${testDir}/${route}.html`);
+	await page.goto(`http://127.0.0.1:4000/${testDir}/${route}.html`, {waitUntil: 'networkidle2'});
 	await page.screenshot({path: filePath, fullPage: true});
 
 	// take upstream screenshot
-	await page.goto(`http://127.0.0.1:4000/${testDir}/${route}_upstream.html`);
+	await page.goto(`http://127.0.0.1:4000/${testDir}/${route}_upstream.html`, {waitUntil: 'networkidle2'});
 	await page.screenshot({path: filePathUpstream, fullPage: true});
 
 	// Test to see if it's right.
