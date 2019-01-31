@@ -1,8 +1,8 @@
-import {LitElement, html} from '@polymer/lit-element/lit-element.js';
-import notify from '@morbidick/lit-element-notify/lit-element-notify.js';
+import { LitElement, html, css } from 'lit-element';
+import { LitNotify } from '@morbidick/lit-element-notify';
 import colors from '../styles/colors.js';
 
-export default class BsButton extends notify(LitElement) {
+export default class BsButton extends LitNotify(LitElement) {
 	static get properties() {
 		return {
 			// set button state to active
@@ -46,9 +46,9 @@ export default class BsButton extends notify(LitElement) {
 		this.type = 'button';
 	}
 
-	render() {
-		return html`
-			<style>
+	static get styles() {
+		return [
+			css`
 				:host(:not([hidden])) {
 					display: inline-block;
 				}
@@ -121,16 +121,20 @@ export default class BsButton extends notify(LitElement) {
 				:host([theme~="outline"]) > *:hover:not([active]) {
 					filter: none;
 				}
-				/* color variants */
-				${colors.map(({selector, color, contrast, focusring, hoverbg}) => html`
-					:host(${selector}) {
-						--bs-button-background-color: ${color};
-						--bs-button-color: ${contrast};
-						--bs-button-focusring-color: ${focusring};
-						--bs-button-hover-background-color: ${hoverbg};
-					}`
-				)}
-			</style>
+			`,
+			...colors.map(({selector, color, contrast, focusring, hoverbg}) => css`
+				:host(${selector}) {
+					--bs-button-background-color: ${color};
+					--bs-button-color: ${contrast};
+					--bs-button-focusring-color: ${focusring};
+					--bs-button-hover-background-color: ${hoverbg};
+				}`
+			)
+		]
+	}
+
+	render() {
+		return html`
 			${this.href ? html`<a id="button" href=${this.href} ?disabled=${this.disabled} ?active=${this.active}><slot></slot></a>`:
 			  !this.toggle ? html`<button id="button" type=${this.type} ?disabled=${this.disabled} ?active=${this.active}><slot></slot></button>`:
 			  html`<button

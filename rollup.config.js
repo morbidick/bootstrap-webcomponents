@@ -1,7 +1,10 @@
+import rimraf from 'rimraf';
 import minify from 'rollup-plugin-babel-minify';
 import resolve from 'rollup-plugin-node-resolve';
 import filesize from 'rollup-plugin-filesize';
 const outFolder = 'dist';
+
+rimraf.sync(outFolder);
 
 export default [
 	{

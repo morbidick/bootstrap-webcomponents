@@ -1,5 +1,6 @@
-import {LitElement, html} from '@polymer/lit-element/lit-element.js';
+import { LitElement, html, css } from 'lit-element';
 import colors from '../styles/colors.js';
+
 
 export default class BsBadge extends LitElement {
 	static get properties() {
@@ -20,9 +21,9 @@ export default class BsBadge extends LitElement {
 		this.theme = 'secondary';
 	}
 
-	render() {
-		return html`
-			<style>
+	static get styles() {
+		return [
+			css`
 				:host {
 					display: inline-block;
 				}
@@ -53,22 +54,25 @@ export default class BsBadge extends LitElement {
 					text-decoration: none;
 					background-color: var(--bs-badge-hover-background-color)
 				}
-				${colors.map(({selector, color, contrast, hoverbg}) => html`
-					:host(${selector}) {
-						--bs-badge-background-color: ${color};
-						--bs-badge-color: ${contrast};
-						--bs-badge-hover-background-color: ${hoverbg};
-					}`
-				)}
 				:host([theme~="pill"]) > * {
 					padding-right: .6em;
 					padding-left: .6em;
 					border-radius: 10em;
-				}
-			</style>
+				}`,
+			...colors.map(({selector, color, contrast, hoverbg}) => css`
+				:host(${selector}) {
+					--bs-badge-background-color: ${color};
+					--bs-badge-color: ${contrast};
+					--bs-badge-hover-background-color: ${hoverbg};
+				}`
+			)
+		];
+	};
+
+	render() {
+		return html`
 			${this.href ? html`<a href=${this.href}><slot></slot></a>`: html`<span><slot></slot></span>`}
-		`;
-	}
+	`;}
 }
 
 customElements.define('bs-badge', BsBadge);

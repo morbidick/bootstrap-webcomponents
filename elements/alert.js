@@ -1,4 +1,4 @@
-import {LitElement, html} from '@polymer/lit-element/lit-element.js';
+import { LitElement, html, css } from 'lit-element';
 import colors from '../styles/colors.js';
 
 export default class BsAlert extends LitElement {
@@ -27,9 +27,9 @@ export default class BsAlert extends LitElement {
 		}
 	}
 
-	render() {
-		return html`
-			<style>
+	static get styles() {
+		return [
+			css`
 				:host {
 					display: block;
 				}
@@ -84,20 +84,25 @@ export default class BsAlert extends LitElement {
 				::slotted(:last-child) {
 					margin-bottom: 0 !important;
 				}
-				${colors.map(({selector, alertcolor, alertbg, alertborder, alertlinkcolor}) => html`
-					:host(${selector}) {
-						--bs-alert-background-color: ${alertbg};
-						--bs-alert-color: ${alertcolor};
-						--bs-alert-border-color: ${alertborder};
-						--bs-link-color: ${alertlinkcolor};
-					}`
-				)}
-			</style>
+			`,
+			...colors.map(({selector, alertcolor, alertbg, alertborder, alertlinkcolor}) => css`
+				:host(${selector}) {
+					--bs-alert-background-color: ${alertbg};
+					--bs-alert-color: ${alertcolor};
+					--bs-alert-border-color: ${alertborder};
+					--bs-link-color: ${alertlinkcolor};
+				}
+			`)
+		]
+	}
+
+	render() {
+		return html`
 			<slot></slot>
 			<button
 				type="button"
 				aria-label="Close"
-				@click=${this.remove.bind(this)}>
+				@click=${this.remove}>
 				<span aria-hidden="true">&times;</span>
 			</button>
 		`;
