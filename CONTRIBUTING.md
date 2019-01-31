@@ -16,7 +16,7 @@
 * write down a list of all theme and functional variants in `tests/component_upstream.html`
 * evaluate native elements (e.g. dialog for modals or progress for the progress bar)
 * design a simple api surface (e.g. setting the `href` or `toggle` attribute to the button component changes the underlying element) in `tests/component.html`
-* open an issue with your idea
+* open an issue (more eyes more ideas ;) )
 * implement the dom and functional parts
   * try to keep it simple
   * prefer `slots` over attributes/properties
@@ -28,6 +28,7 @@
   * for performance reasons implement static css that selects on host attributes
   * for theme variants loop over `styles/colors.js`
   * run the screenshot tests `npm test`, see the results in [test-results](test-results)
+* push early and iterate often (most components so far took me about 3 implementations until it felt right)
 * extra goal: implement functional browser tests
 
 ## Resources
