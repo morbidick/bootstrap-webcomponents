@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+	<script type="module">
+		import baseStyle from "../../styles/type.js";
+		import { renderToHead } from "../../helpers/helpers.js";
+		import "../../elements/progress.js";
+
+		renderToHead(baseStyle);
+	</script>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		bs-progress {
+			margin: 1em;
+		}
+	</style>
+</head>
+
+<body>
+	<bs-progress value="0"></bs-progress>
+	<bs-progress value="1" maxvalue="4">25%</bs-progress>
+	<bs-progress value="50"></bs-progress>
+	<bs-progress value="3" maxvalue="4">75%</bs-progress>
+	<bs-progress value="100"></bs-progress>
+	<br />
+	<bs-progress theme="primary" value="25">primary</bs-progress>
+	<bs-progress theme="secondary" value="1" maxvalue="3">secondary</bs-progress>
+	<bs-progress theme="success" value="9" maxvalue="20">success</bs-progress>
+	<bs-progress theme="info" value="3" maxvalue="5">info</bs-progress>
+	<bs-progress theme="warning" value="75">warning</bs-progress>
+	<bs-progress theme="danger" value="85">danger</bs-progress>
+	<bs-progress theme="light" value="95">light</bs-progress>
+	<bs-progress theme="dark" value="100">dark</bs-progress>
+	<br />
+	<bs-progress theme="striped" value="10">10%</bs-progress>
+	<bs-progress theme="success striped" value="25"></bs-progress>
+	<bs-progress theme="info striped" value="50">50%</bs-progress>
+	<bs-progress theme="warning striped" value="75"></bs-progress>
+	<bs-progress theme="danger striped" value="100">100%</bs-progress>
+	<br />
+	<bs-progress theme="striped animated" value="75"></bs-progress>
+</body>
+
+</html>

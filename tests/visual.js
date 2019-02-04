@@ -46,6 +46,10 @@ describe('implementation visually matches original bootstrap', function() {
 	it('Alerts', async function() {
 		return takeAndCompareScreenshot(page, 'alert');
 	});
+
+	it('Progress bar', async function() {
+		return takeAndCompareScreenshot(page, 'progress');
+	});
 });
 
 // - page is a reference to the Puppeteer page.

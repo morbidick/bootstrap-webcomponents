@@ -17,6 +17,7 @@
 		import "../elements/button-group.js";
 		import "../elements/badge.js";
 		import "../elements/alert.js";
+		import "../elements/progress.js";
 
 		renderToHead(baseStyle);
 	</script>
@@ -35,6 +36,7 @@
 			<li><a href="#buttons">Buttons</a></li>
 			<li><a href="#badges">Badges</a></li>
 			<li><a href="#alerts">Alerts</a></li>
+			<li><a href="#progress">Progress</a></li>
 		</ul>
 		<h2 id="buttons">Buttons</h2>
 		<demo-snippet>
@@ -192,6 +194,19 @@
 				<bs-alert dismissable theme="primary">This is a primary dismissable alert.</bs-alert>
 				<bs-alert dismissable theme="secondary">This is a secondary dismissable alert.</bs-alert>
 				<bs-alert dismissable theme="success">This is a success dismissable alert. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content</bs-alert>
+			</template>
+		</demo-snippet>
+
+		<h2 id="progress">Progress</h2>
+		<demo-snippet>
+			<template>
+				<bs-progress theme="primary" value="25">primary</bs-progress>
+				<bs-progress theme="secondary" value="1" maxvalue="3">secondary</bs-progress>
+				<bs-progress theme="success" value="9" maxvalue="20">success</bs-progress>
+				<bs-progress theme="info" value="3" maxvalue="5">info</bs-progress>
+				<bs-progress theme="warning striped" value="75">warning</bs-progress>
+				<bs-progress theme="danger striped" value="85">danger</bs-progress>
+				<bs-progress theme="dark striped animated" value="100">dark</bs-progress>
 			</template>
 		</demo-snippet>
 	</div>
