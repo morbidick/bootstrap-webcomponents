@@ -1,9 +1,9 @@
 // https://getbootstrap.com/docs/4.1/content/typography/
-import {css, unsafeCss, html} from 'lit-element';
+import {css, unsafeCSS, html} from 'lit-element';
 import {primary} from './colors.js';
 
-export const fontFamilySansSerif = unsafeCss`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
-export const fontFamilyMonospace = unsafeCss`SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
+export const fontFamilySansSerif = unsafeCSS`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
+export const fontFamilyMonospace = unsafeCSS`SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
 export const fontStyle = css`
 	:root {
 		font-family: var(--bs-body-font-family, ${fontFamilySansSerif});
